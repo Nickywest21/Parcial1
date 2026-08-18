@@ -1,0 +1,164 @@
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .main-nav {
+    gap: 18px;
+  }
+
+  .header-button {
+    display: none;
+  }
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-image {
+    min-height: 400px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+  .section {
+    padding: 70px 20px;
+  }
+
+
+  /* HEADER */
+
+  .site-header {
+    padding: 18px 20px;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .main-nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 18px;
+  }
+
+  .main-nav a {
+    font-size: 0.8rem;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: 650px;
+
+    padding: 150px 20px 80px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 18vw, 5rem);
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-decoration {
+    display: none;
+  }
+
+
+  /* ABOUT */
+
+  .about-image {
+    min-height: 300px;
+  }
+
+
+  /* MENU */
+
+  .category-buttons {
+    gap: 8px;
+  }
+
+  .category-button {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .menu-card {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card-image {
+    min-height: 220px;
+  }
+
+  .menu-card-content {
+    padding: 20px;
+  }
+
+
+  /* CONTACT */
+
+  .contact-preview {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  /* FOOTER */
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+
+    padding: 60px 20px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    padding: 20px;
+  }
+}
