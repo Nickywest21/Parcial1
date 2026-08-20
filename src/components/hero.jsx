@@ -1,8 +1,6 @@
 function Hero() {
   return (
-    <section className="hero">
-
-      <div className="hero-overlay"></div>
+    <section className="hero" id="inicio">
 
       <div className="hero-content">
 
@@ -11,7 +9,7 @@ function Hero() {
         </span>
 
         <h1>
-          Don Chente
+          La Placita
           <span>Restaurante</span>
         </h1>
 

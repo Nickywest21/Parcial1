@@ -7,7 +7,7 @@ function Menu() {
       <div className="section-heading">
         <span>Nuestros platillos</span>
 
-        <h2>El menú de Don Chente</h2>
+        <h2>El menú de La Placita</h2>
 
         <p>
           Una selección de nuestros platillos favoritos preparados para
@@ -15,20 +15,24 @@ function Menu() {
         </p>
       </div>
 
-      <div className="category-buttons" aria-label="Categorías del menú">
-        <button type="button" className="category-button active">
+      <div
+        className="category-buttons"
+        role="group"
+        aria-label="Categorías del menú"
+      >
+        <button type="button" className="category-button active" aria-pressed="true">
           Todos
         </button>
 
-        <button type="button" className="category-button">
+        <button type="button" className="category-button" aria-pressed="false">
           Desayunos
         </button>
 
-        <button type="button" className="category-button">
+        <button type="button" className="category-button" aria-pressed="false">
           Almuerzos
         </button>
 
-        <button type="button" className="category-button">
+        <button type="button" className="category-button" aria-pressed="false">
           Bebidas
         </button>
       </div>
@@ -50,7 +54,7 @@ function Menu() {
         />
 
         <MenuCard
-          nombre="Hamburguesa Don Chente"
+          nombre="Hamburguesa de la casa"
           descripcion="Carne preparada en casa con ingredientes frescos."
           precio="Q 55"
           imagen="/img/menu-hamburguesa.jpg"
