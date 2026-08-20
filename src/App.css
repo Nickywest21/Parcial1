@@ -1,9 +1,62 @@
 /* =========================================
+   VARIABLES DE MARCA — LA PLACITA
+========================================= */
+
+:root {
+  --color-oliva-oscuro: #58552D;   /* texto sobre fondo claro; fondo oscuro (header, footer, tarjetas) */
+  --color-terracota: #742111;      /* fondo del Hero/CTA; acento sobre fondos claros */
+  --color-caramelo: #A87A57;       /* acento sobre fondos oscuros (íconos, precios, hover) */
+  --color-crema: #FFF8E7;          /* fondo claro principal; texto sobre fondo oscuro */
+  --color-salvia: #D0CCA4;         /* fondo claro alterno (sección "Nuestra historia") */
+
+  --color-texto-secundario-oscuro: rgba(255, 248, 231, 0.72); /* texto secundario sobre fondo oscuro */
+  --color-texto-secundario-claro: rgba(88, 85, 45, 0.68);     /* texto secundario sobre fondo claro */
+}
+
+
+/* =========================================
    BASE
 ========================================= */
 
 #root {
   width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--superficie-clara);
+  color: var(--texto-claro);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-terracota);
+  color: var(--color-crema);
 }
 
 .section {
@@ -21,7 +74,7 @@
   display: block;
   margin-bottom: 12px;
 
-  color: #ab5137;
+  color: var(--color-terracota);
 
   font-size: 0.85rem;
   font-weight: 700;
@@ -30,11 +83,10 @@
 }
 
 .section-heading h2,
-.about-content h2,
-.contact-preview h2 {
+.about-content h2 {
   margin: 0 0 20px;
 
-  color: #4b1709;
+  color: var(--texto-claro);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2rem, 4vw, 3.4rem);
@@ -44,7 +96,7 @@
 .section-heading p {
   margin: 0;
 
-  color: #756c07;
+  color: var(--texto-claro-secundario);
   font-size: 1rem;
   line-height: 1.8;
 }
@@ -55,16 +107,17 @@
 ========================================= */
 
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
 
   width: 100%;
 
-  padding: 22px 6%;
+  padding: 18px 6%;
 
-  background: rgba(75, 23, 9, 0.88);
+  background: var(--color-oliva-oscuro);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .header-container {
@@ -80,7 +133,7 @@
   display: flex;
   flex-direction: column;
 
-  color: #ffefa4;
+  color: var(--color-crema);
 
   text-decoration: none;
   line-height: 0.9;
@@ -103,7 +156,7 @@
 }
 
 .main-nav a {
-  color: #fffefa;
+  color: var(--color-crema);
 
   font-size: 0.9rem;
   font-weight: 600;
@@ -114,8 +167,29 @@
 }
 
 .main-nav a:hover,
-.main-nav a:focus {
-  color: #ffefa4;
+.main-nav a:focus-visible {
+  color: var(--color-caramelo);
+}
+
+.menu-toggle {
+  display: none;
+
+  flex-direction: column;
+  gap: 5px;
+
+  padding: 8px;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+
+  background: var(--color-crema);
 }
 
 .header-button,
@@ -126,23 +200,48 @@
 
   border: none;
 
-  background: #ab5137;
-  color: #fffefa;
+  background: var(--color-crema);
+  color: var(--color-terracota);
 
   font-weight: 700;
   text-decoration: none;
 
   transition:
     transform 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .header-button:hover,
 .main-button:hover,
-.header-button:focus,
-.main-button:focus {
-  background: #756c07;
+.header-button:focus-visible,
+.main-button:focus-visible {
+  background: var(--color-terracota);
+  color: var(--color-crema);
   transform: translateY(-2px);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+
+  border: 1px solid var(--color-caramelo);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-crema);
+
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: var(--color-caramelo);
+  color: var(--color-oliva-oscuro);
 }
 
 
@@ -160,12 +259,7 @@
 
   padding: 140px 6% 100px;
 
-  background:
-    linear-gradient(
-      rgba(40, 15, 7, 0.72),
-      rgba(75, 23, 9, 0.82)
-    ),
-    url("/img/hero.jpg") center / cover no-repeat;
+  background: var(--color-terracota);
 
   overflow: hidden;
 }
@@ -176,17 +270,17 @@
 
   max-width: 720px;
 
-  color: white;
+  color: var(--color-crema);
 }
 
 .hero-eyebrow {
-  color: #ffefa4;
+  color: var(--color-caramelo);
 }
 
 .hero h1 {
   margin: 0 0 25px;
 
-  color: #fffefa;
+  color: var(--color-crema);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(4rem, 9vw, 7rem);
@@ -197,7 +291,7 @@
 .hero h1 span {
   display: block;
 
-  color: #ffefa4;
+  color: var(--color-caramelo);
 
   font-size: 0.5em;
   font-style: italic;
@@ -208,7 +302,7 @@
 
   margin-bottom: 35px;
 
-  color: #fffefa;
+  color: var(--color-crema);
 
   font-size: 1.15rem;
   line-height: 1.8;
@@ -223,7 +317,7 @@
 }
 
 .text-button {
-  color: #ffefa4;
+  color: var(--color-caramelo);
 
   font-weight: 700;
   text-decoration: none;
@@ -237,7 +331,7 @@
   display: flex;
   gap: 12px;
 
-  color: #ffefa4;
+  color: var(--color-caramelo);
 
   font-size: 0.75rem;
   font-weight: 700;
@@ -247,11 +341,11 @@
 
 
 /* =========================================
-   SERVICES
+   SERVICES / VALORES (dentro de Nosotros)
 ========================================= */
 
 .services {
-  background: #fffefa;
+  background: var(--superficie-clara);
 }
 
 .services-grid {
@@ -266,9 +360,9 @@
 .service-card {
   padding: 40px 30px;
 
-  border: 1px solid rgba(117, 108, 7, 0.2);
+  border: 1px solid rgba(168, 122, 87, 0.3);
 
-  background: #fff;
+  background: var(--color-oliva-oscuro);
 
   text-align: center;
 
@@ -280,7 +374,7 @@
 .service-card:hover {
   transform: translateY(-6px);
 
-  box-shadow: 0 15px 40px rgba(75, 23, 9, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .service-icon {
@@ -293,8 +387,8 @@
 
   margin: 0 auto 20px;
 
-  background: #ffefa4;
-  color: #4b1709;
+  background: var(--color-caramelo);
+  color: var(--color-oliva-oscuro);
 
   font-weight: 800;
 }
@@ -302,7 +396,7 @@
 .service-card h3 {
   margin-bottom: 15px;
 
-  color: #4b1709;
+  color: var(--color-crema);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
@@ -311,13 +405,13 @@
 .service-card p {
   margin: 0;
 
-  color: #756c07;
+  color: var(--color-texto-secundario-oscuro);
   line-height: 1.7;
 }
 
 
 /* =========================================
-   ABOUT
+   ABOUT / NOSOTROS
 ========================================= */
 
 .about {
@@ -326,7 +420,7 @@
   gap: 70px;
   align-items: center;
 
-  background: #ffefa4;
+  background: var(--superficie-alterna);
 }
 
 .about-image {
@@ -343,7 +437,7 @@
 }
 
 .about-content p {
-  color: #4b1709;
+  color: var(--texto-claro);
   line-height: 1.8;
 }
 
@@ -353,18 +447,18 @@
   margin-top: 15px;
   padding: 13px 24px;
 
-  border: 1px solid #4b1709;
+  border: 1px solid var(--color-terracota);
 
-  color: #4b1709;
+  color: var(--color-terracota);
 
   font-weight: 700;
   text-decoration: none;
 }
 
 .outline-button:hover,
-.outline-button:focus {
-  background: #4b1709;
-  color: #ffefa4;
+.outline-button:focus-visible {
+  background: var(--color-terracota);
+  color: var(--color-crema);
 }
 
 
@@ -373,7 +467,7 @@
 ========================================= */
 
 .menu-section {
-  background: #fffefa;
+  background: var(--superficie-clara);
 }
 
 .category-buttons {
@@ -389,21 +483,25 @@
 .category-button {
   padding: 11px 25px;
 
-  border: 1px solid #ab5137;
+  border: 1px solid var(--color-terracota);
 
   background: transparent;
-  color: #4b1709;
+  color: var(--color-terracota);
 
   font-weight: 700;
 
   cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .category-button.active,
 .category-button:hover,
-.category-button:focus {
-  background: #ab5137;
-  color: #fffefa;
+.category-button:focus-visible {
+  background: var(--color-terracota);
+  color: var(--color-crema);
 }
 
 .menu-grid {
@@ -421,9 +519,9 @@
 
   min-height: 180px;
 
-  background: #fff;
+  background: var(--color-oliva-oscuro);
 
-  box-shadow: 0 8px 30px rgba(75, 23, 9, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 .menu-card-image {
@@ -453,25 +551,25 @@
 .menu-card h3 {
   margin: 0;
 
-  color: #4b1709;
+  color: var(--color-crema);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.35rem;
 }
 
 .menu-card-title span {
-  color: #ab5137;
+  color: var(--color-caramelo);
   font-weight: 800;
   white-space: nowrap;
 }
 
 .menu-card p {
-  color: #756c07;
+  color: var(--color-texto-secundario-oscuro);
   line-height: 1.6;
 }
 
 .menu-link {
-  color: #ab5137;
+  color: var(--color-caramelo);
 
   font-size: 0.9rem;
   font-weight: 800;
@@ -490,21 +588,27 @@
   justify-content: space-between;
   gap: 40px;
 
-  background: #4b1709;
+  background: var(--color-terracota);
 }
 
 .contact-preview h2 {
-  color: #ffefa4;
+  margin: 0 0 20px;
+
+  color: var(--color-crema);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
 }
 
 .contact-preview .eyebrow {
-  color: #ab5137;
+  color: var(--color-caramelo);
 }
 
 .contact-preview p {
   max-width: 600px;
 
-  color: #fffefa;
+  color: var(--color-crema);
   line-height: 1.8;
 }
 
@@ -514,8 +618,8 @@
 ========================================= */
 
 .site-footer {
-  background: #2d0d05;
-  color: #fffefa;
+  background: var(--color-oliva-oscuro);
+  color: var(--color-crema);
 }
 
 .footer-container {
@@ -532,7 +636,7 @@
 .footer-brand p {
   max-width: 350px;
 
-  color: #ffefa4;
+  color: var(--color-crema);
   line-height: 1.8;
 }
 
@@ -549,7 +653,7 @@
 .footer-column h3 {
   margin-bottom: 10px;
 
-  color: #ffefa4;
+  color: var(--color-caramelo);
 
   font-family: Georgia, "Times New Roman", serif;
 }
@@ -559,23 +663,23 @@
 }
 
 .footer-column a {
-  color: #fffefa;
+  color: var(--color-crema);
   text-decoration: none;
 }
 
 .footer-column a:hover,
-.footer-column a:focus {
-  color: #ffefa4;
+.footer-column a:focus-visible {
+  color: var(--color-caramelo);
 }
 
 .footer-column span {
-  color: #d9c98a;
+  color: var(--color-texto-secundario-oscuro);
 }
 
 .footer-bottom {
   padding: 20px 6%;
 
-  border-top: 1px solid rgba(255, 239, 164, 0.2);
+  border-top: 1px solid rgba(168, 122, 87, 0.25);
 
   text-align: center;
 }
@@ -583,8 +687,83 @@
 .footer-bottom p {
   margin: 0;
 
-  color: #d9c98a;
+  color: var(--color-texto-secundario-oscuro);
   font-size: 0.85rem;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 18px;
+
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: var(--color-crema);
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+  color: var(--color-caramelo);
+}
+
+.footer-hours {
+  margin: 0;
+}
+
+.footer-hours dt {
+  margin-top: 10px;
+
+  color: var(--color-crema);
+  font-weight: 700;
+}
+
+.footer-hours dt:first-child {
+  margin-top: 0;
+}
+
+.footer-hours dd {
+  margin: 2px 0 0;
+
+  color: var(--color-texto-secundario-oscuro);
+}
+
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-style: normal;
+}
+
+
+/* =========================================
+   RESPONSIVE — MENU
+========================================= */
+
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .menu-card {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card-image {
+    min-height: 220px;
+  }
 }
 
 
@@ -594,6 +773,6 @@
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid #ffefa4;
+  outline: 3px solid currentColor;
   outline-offset: 4px;
 }

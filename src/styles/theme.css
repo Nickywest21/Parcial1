@@ -1,13 +1,39 @@
 :root {
-  --color-cream: #ffefa4;
-  --color-mustard: #a69b03;
-  --color-olive: #756c07;
-  --color-brown: #4b1709;
-  --color-terracotta: #ab5137;
+  --color-oliva-oscuro: #58552D;
+  --color-terracota: #742111;
+  --color-caramelo: #B9966E; /* actualizado: más claro y ligeramente más amarillo */
+  --color-crema: #FFF8E7;
+  --color-salvia: #D0CCA4;
 
-  --color-white: #fffefa;
-  --color-dark: #2d0d05;
+  --color-texto-secundario-oscuro: rgba(255, 248, 231, 0.72);
+  --color-texto-secundario-claro: rgba(88, 85, 45, 0.68);
 
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-title: Georgia, "Times New Roman", serif;
+  /* Variables de rol — solo para secciones claras (body, menú, nosotros) */
+  --superficie-clara: var(--color-crema);
+  --superficie-alterna: var(--color-salvia);
+  --texto-claro: var(--color-oliva-oscuro);
+  --texto-claro-secundario: var(--color-texto-secundario-claro);
+}
+
+html.dark-mode {
+  --superficie-clara: #241F10;
+  --superficie-alterna: #2C2614;
+  --texto-claro: var(--color-crema);
+  --texto-claro-secundario: rgba(255, 248, 231, 0.68);
+}
+
+/* Botones con borde terracota, sobre secciones que ahora son oscuras */
+html.dark-mode .outline-button,
+html.dark-mode .category-button {
+  border-color: var(--color-caramelo);
+  color: var(--color-caramelo);
+}
+
+html.dark-mode .outline-button:hover,
+html.dark-mode .outline-button:focus-visible,
+html.dark-mode .category-button.active,
+html.dark-mode .category-button:hover,
+html.dark-mode .category-button:focus-visible {
+  background: var(--color-caramelo);
+  color: var(--color-oliva-oscuro);
 }
