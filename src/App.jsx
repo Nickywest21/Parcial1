@@ -6,6 +6,7 @@ import Footer from "./components/footer";
 import ContactForm from "./components/contactForm";
 import "./styles/theme.css";
 import "./App.css";
+import "./styles/ally.css";
 
 
 function App() {
