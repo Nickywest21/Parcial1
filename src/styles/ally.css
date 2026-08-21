@@ -1,0 +1,203 @@
+:where(a, button, input, textarea, select, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+	outline: 3px solid #ffbf00;
+	outline-offset: 4px;
+}
+
+@media (prefers-contrast: more) {
+	:root {
+		--color-oliva-oscuro: #000000;
+		--color-terracota: #000000;
+		--color-caramelo: #000000;
+		--color-crema: #ffffff;
+		--color-salvia: #ffffff;
+		--color-texto-secundario-oscuro: #000000;
+		--color-texto-secundario-claro: #000000;
+		--superficie-clara: #ffffff;
+		--superficie-alterna: #ffffff;
+		--texto-claro: #000000;
+		--texto-claro-secundario: #000000;
+		--ally-background: #ffffff;
+		--ally-surface: #ffffff;
+		--ally-text: #000000;
+		--ally-accent: #0000ee;
+		--ally-border: #000000;
+	}
+
+	html,
+	body,
+	main,
+	header,
+	footer,
+	section,
+	article,
+	nav {
+		background-color: var(--ally-background);
+		color: var(--ally-text);
+	}
+
+	a,
+	button,
+	input,
+	textarea,
+	select {
+		border-color: var(--ally-border);
+		color: var(--ally-text);
+	}
+
+	a {
+		color: var(--ally-accent);
+		text-decoration: underline;
+	}
+
+	button,
+	input,
+	textarea,
+	select {
+		background-color: var(--ally-surface);
+	}
+}
+
+:is(html.high-contrast, body.high-contrast) {
+	--color-oliva-oscuro: #000000;
+	--color-terracota: #000000;
+	--color-caramelo: #000000;
+	--color-crema: #ffffff;
+	--color-salvia: #ffffff;
+	--color-texto-secundario-oscuro: #000000;
+	--color-texto-secundario-claro: #000000;
+	--superficie-clara: #ffffff;
+	--superficie-alterna: #ffffff;
+	--texto-claro: #000000;
+	--texto-claro-secundario: #000000;
+	--ally-background: #ffffff;
+	--ally-surface: #ffffff;
+	--ally-text: #000000;
+	--ally-accent: #0000ee;
+	--ally-border: #000000;
+}
+
+:is(html.high-contrast body, body.high-contrast),
+:is(html.high-contrast body, body.high-contrast) main,
+:is(html.high-contrast body, body.high-contrast) header,
+:is(html.high-contrast body, body.high-contrast) footer,
+:is(html.high-contrast body, body.high-contrast) section,
+:is(html.high-contrast body, body.high-contrast) article,
+:is(html.high-contrast body, body.high-contrast) nav {
+	background-color: var(--ally-background);
+	color: var(--ally-text);
+}
+
+:is(html.high-contrast body, body.high-contrast) a,
+:is(html.high-contrast body, body.high-contrast) button,
+:is(html.high-contrast body, body.high-contrast) input,
+:is(html.high-contrast body, body.high-contrast) textarea,
+:is(html.high-contrast body, body.high-contrast) select {
+	border-color: var(--ally-border);
+	color: var(--ally-text);
+}
+
+:is(html.high-contrast body, body.high-contrast) a {
+	color: var(--ally-accent);
+	text-decoration: underline;
+}
+
+:is(html.high-contrast body, body.high-contrast) button,
+:is(html.high-contrast body, body.high-contrast) input,
+:is(html.high-contrast body, body.high-contrast) textarea,
+:is(html.high-contrast body, body.high-contrast) select {
+	background-color: var(--ally-surface);
+}
+
+:is(html.high-contrast body, body.high-contrast) :where(
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	span,
+	strong,
+	li,
+	label
+) {
+	color: #000000 !important;
+}
+
+:is(html.high-contrast body, body.high-contrast) a {
+	color: #0000ee !important;
+}
+
+:is(html.high-contrast body, body.high-contrast) button,
+:is(html.high-contrast body, body.high-contrast) input,
+:is(html.high-contrast body, body.high-contrast) textarea,
+:is(html.high-contrast body, body.high-contrast) select {
+	color: #000000 !important;
+}
+
+html.dark-mode .about-content .eyebrow,
+html.dark-mode .section-heading > span {
+	color: #ffcf70 !important;
+}
+
+html.dark-mode .about-content h2,
+html.dark-mode .about-content p,
+html.dark-mode .section-heading h2,
+html.dark-mode .section-heading p,
+html.dark-mode .service-card h3,
+html.dark-mode .service-card p {
+	color: #fff8e7 !important;
+}
+
+html.dark-mode .menu-section .section-heading > span {
+	color: #ffcf70 !important;
+}
+
+html.dark-mode .menu-section .section-heading h2,
+html.dark-mode .menu-section .section-heading p {
+	color: #fff8e7 !important;
+}
+
+:is(html.high-contrast body, body.high-contrast) .menu-section .section-heading > span,
+:is(html.high-contrast body, body.high-contrast) .menu-section .section-heading h2,
+:is(html.high-contrast body, body.high-contrast) .menu-section .section-heading p {
+	color: #000000 !important;
+}
+
+:is(html.high-contrast body, body.high-contrast) .service-card {
+	background-color: #ffffff;
+}
+
+:is(html.high-contrast body, body.high-contrast) .service-icon {
+	background-color: #ffffff;
+	color: #000000 !important;
+}
+
+:is(html.high-contrast body, body.high-contrast) .service-card h3,
+:is(html.high-contrast body, body.high-contrast) .service-card p {
+	color: #000000 !important;
+}
+
+:is(html.high-contrast body, body.high-contrast) button:hover,
+:is(html.high-contrast body, body.high-contrast) button:focus-visible {
+	background-color: #ffffff !important;
+	color: #000000 !important;
+}
+
+:is(html.high-contrast body, body.high-contrast) .category-button.active,
+:is(html.high-contrast body, body.high-contrast) .category-button:hover,
+:is(html.high-contrast body, body.high-contrast) .category-button:focus-visible {
+	border: 2px solid #000000 !important;
+	background-color: #ffffff !important;
+	color: #000000 !important;
+}
+
+.header-actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.header-actions .theme-toggle {
+	margin-left: 0;
+}

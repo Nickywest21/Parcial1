@@ -5,6 +5,7 @@ import Menu from "./components/menu";
 import Footer from "./components/footer";
 import "./styles/theme.css";
 import "./App.css";
+import "./styles/ally.css";
 
 
 function App() {
