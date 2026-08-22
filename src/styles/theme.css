@@ -1,52 +1,182 @@
 /* =========================================
    TEMA — LA PLACITA
-   Variables semánticas de color (claro/oscuro)
+
+   MODO CLARO:
+   Crema / durazno / naranja / terracota
+   / marrón cálido
+
+   MODO OSCURO:
+   Rojo quemado / naranja / barro / crema
 ========================================= */
- 
+
+
+/* =========================================
+   MODO CLARO
+========================================= */
+
 :root {
-  /* --- Modo claro (default) --- */
-  --color-bg: #F3EFE5;              /* Warm Ivory */
-  --color-surface: #FFFDF7;         /* Soft Cream */
-  --color-surface-elevated: #CCBA92; /* Greige, más saturado */
-  --color-primary: #1A200C;         /* Dark Olive, más oscuro para separarse del header/footer */
-  --color-secondary: #668847;       /* Sage, más vivo */
-  --color-accent: #9A561E;          /* Warm Brown, más vivo */
-  --color-accent-hover: #712D0B;    /* Chestnut, más vivo */
-  --color-text: #25271D;            /* Near-black Olive */
-  --color-text-secondary: #69675D;  /* Earthy Gray */
-  --color-border: #E2D6BA;          /* Soft Greige, más cálido */
- 
-  /* Texto legible sobre fondos con --color-primary.
-     --color-primary se invierte entre modos (oscuro <-> claro),
-     así que este también se invierte para mantener el contraste. */
-  --color-on-primary: var(--color-surface);
- 
-  /* --- "Ink": banda fija (header, footer, tarjetas) ---
-     No cambia entre modo claro/oscuro; en modo oscuro coincide
-     con el color explícito de "Navbar" de la paleta. */
-  --color-ink: #2F3815;                         /* Dark Olive, más vivo */
-  --color-ink-text: #F2EBDD;                    /* Warm Ivory */
-  --color-ink-text-secondary: #BDB8A9;          /* Muted Beige */
-  --color-ink-border: rgba(175, 96, 36, 0.32);  /* Warm Brown, sutil */
+
+  /* =========================================
+     FONDOS
+  ========================================= */
+
+  /* Crema cálido */
+  --color-bg: #F3DDCA;
+
+  /* Crema claro */
+  --color-surface: #FFF2E5;
+
+  /* Durazno / beige */
+  --color-surface-elevated: #E2BFA8;
+
+
+  /* =========================================
+     COLORES PRINCIPALES
+  ========================================= */
+
+  /*
+     IMPORTANTE:
+
+     Este NO es el mismo terracota del dark mode.
+
+     En claro es más marrón y profundo,
+     para que el texto crema tenga contraste.
+  */
+  --color-primary: #71351F;
+
+  /*
+     Naranja quemado para elementos secundarios
+  */
+  --color-secondary: #C45A27;
+
+
+  /* =========================================
+     ACENTOS
+  ========================================= */
+
+  /* Naranja cálido */
+  --color-accent: #E47B20;
+
+  /* Naranja/rojo oscuro para hover */
+  --color-accent-hover: #9E3F19;
+
+
+  /* =========================================
+     TEXTO
+  ========================================= */
+
+  /* Marrón muy oscuro */
+  --color-text: #321A12;
+
+  /* Marrón medio */
+  --color-text-secondary: #715345;
+
+
+  /* =========================================
+     BORDES
+  ========================================= */
+
+  --color-border: #D1A58D;
+
+
+  /* =========================================
+     TEXTO SOBRE PRIMARY
+  ========================================= */
+
+  --color-on-primary: #FFF2E5;
+
+
+  /* =========================================
+     INK
+     HEADER / FOOTER / TARJETAS
+  ========================================= */
+
+  /*
+     Más naranja que el Hero.
+     Esto crea una diferencia visual
+     entre Header y Hero.
+  */
+  --color-ink: #A9451C;
+
+  --color-ink-text: #FFF3E8;
+
+  --color-ink-text-secondary: #EAC8B5;
+
+  --color-ink-border: rgba(255, 243, 232, 0.25);
 }
- 
+
+
+/* =========================================
+   MODO OSCURO
+
+   ESTA PARTE SE MANTIENE COMO
+   LA VERSIÓN QUE TE GUSTÓ
+========================================= */
+
 html.dark-mode {
-  --color-bg: #10150F;              /* Almost Black Green */
-  --color-surface: #1B2418;         /* Deep Forest */
-  --color-surface-elevated: #243A17; /* Forest Green, más vivo */
-  --color-primary: #241a18;         
-  --color-secondary: #608B46;       /* Muted Green, más vivo */
-  --color-accent: #AF6024;          /* Warm Brown, más vivo */
-  --color-accent-hover: #CA712A;    /* Chestnut, más vivo */
-  --color-text: #F2EBDD;            /* Warm Ivory */
-  --color-text-secondary: #BDB8A9;  /* Muted Beige */
-  --color-border: #345228;          /* Green Gray, más vivo */
- 
-  --color-on-primary: var(--color-text);
- 
-  /* Coincide con el "Navbar" explícito de tu paleta oscura */
-  --color-ink: #1E3114;
-  /* --color-ink-text / --color-ink-text-secondary / --color-ink-border
-     se mantienen igual: el header/footer ya viven en modo oscuro
-     permanente, por lo que no necesitan cambiar. */
+
+  /* =========================================
+     FONDOS
+  ========================================= */
+
+  --color-bg: #1C0E09;
+
+  --color-surface: #301711;
+
+  --color-surface-elevated: #5A2919;
+
+
+  /* =========================================
+     COLORES PRINCIPALES
+  ========================================= */
+
+  --color-primary: #8E2F12;
+
+  --color-secondary: #C65A25;
+
+
+  /* =========================================
+     ACENTOS
+  ========================================= */
+
+  --color-accent: #E07816;
+
+  --color-accent-hover: #F0953B;
+
+
+  /* =========================================
+     TEXTO
+  ========================================= */
+
+  --color-text: #FFF0E5;
+
+  --color-text-secondary: #D8B6A5;
+
+
+  /* =========================================
+     BORDES
+  ========================================= */
+
+  --color-border: #693D2D;
+
+
+  /* =========================================
+     TEXTO SOBRE PRIMARY
+  ========================================= */
+
+  --color-on-primary: #FFF0E5;
+
+
+  /* =========================================
+     INK
+     HEADER / FOOTER / TARJETAS
+  ========================================= */
+
+  --color-ink: #35130C;
+
+  --color-ink-text: #FFF0E5;
+
+  --color-ink-text-secondary: #D9B5A3;
+
+  --color-ink-border: rgba(255, 240, 229, 0.18);
 }
