@@ -42,8 +42,8 @@ function Footer() {
               +502 0000-0000
             </a>
 
-            <a href="mailto:contacto@laplacita.com">
-              contacto@laplacita.com
+            <a href="mailto:contactolaplacita1@gmail.com">
+              contactolaplacita1@gmail.com
             </a>
 
             <span>Ciudad de Guatemala</span>

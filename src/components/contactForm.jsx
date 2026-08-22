@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../App.css";
+import emailjs from "@emailjs/browser";
 
 function ContactForm() {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -51,27 +51,48 @@ function ContactForm() {
     return nuevosErrores;
   };
 
-  const manejarEnvio = (e) => {
-    e.preventDefault();
+const manejarEnvio = (e) => {
+  e.preventDefault();
 
-    const nuevosErrores = validarFormulario();
+  const nuevosErrores = validarFormulario();
 
-    if (Object.keys(nuevosErrores).length > 0) {
-      setErrores(nuevosErrores);
-      return;
-    }
+  if (Object.keys(nuevosErrores).length > 0) {
+    setErrores(nuevosErrores);
+    return;
+  }
 
-    setErrores({});
-    setEnviado(true);
+  setErrores({});
 
-    console.log("Formulario enviado:", formulario);
+  emailjs
+    .send(
+      "service_t7k24nd",
+      "template_wl4joxa",
+      {
+        nombre: formulario.nombre,
+        correo: formulario.correo,
+        mensaje: formulario.mensaje,
+      },
+      {
+        publicKey: "rPUgtQGDK4XtF1etV",
+      }
+    )
+    .then(
+      () => {
+        console.log("Correo enviado correctamente");
 
-    setFormulario({
-      nombre: "",
-      correo: "",
-      mensaje: "",
-    });
-  };
+        setEnviado(true);
+
+        setFormulario({
+          nombre: "",
+          correo: "",
+          mensaje: "",
+        });
+      },
+      (error) => {
+        console.error("Error al enviar el correo:", error);
+      }
+    );
+};
 
   return (
     <div className="contact-form-wrapper">
