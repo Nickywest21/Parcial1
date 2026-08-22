@@ -3,8 +3,10 @@ import Hero from "./components/hero";
 import About from "./components/about";
 import Menu from "./components/menu";
 import Footer from "./components/footer";
+import ContactForm from "./components/contactForm";
 import "./styles/theme.css";
 import "./App.css";
+import "./styles/ally.css";
 
 
 function App() {
@@ -31,9 +33,7 @@ function App() {
             </p>
           </div>
 
-          <a href="#contacto" className="main-button">
-            Contáctanos
-          </a>
+          <ContactForm />
         </section>
       </main>
 
