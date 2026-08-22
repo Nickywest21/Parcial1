@@ -1,39 +1,52 @@
+/* =========================================
+   TEMA — LA PLACITA
+   Variables semánticas de color (claro/oscuro)
+========================================= */
+ 
 :root {
-  --color-oliva-oscuro: #58552D;
-  --color-terracota: #742111;
-  --color-caramelo: #B9966E; /* actualizado: más claro y ligeramente más amarillo */
-  --color-crema: #FFF8E7;
-  --color-salvia: #D0CCA4;
-
-  --color-texto-secundario-oscuro: rgba(255, 248, 231, 0.72);
-  --color-texto-secundario-claro: rgba(88, 85, 45, 0.68);
-
-  /* Variables de rol — solo para secciones claras (body, menú, nosotros) */
-  --superficie-clara: var(--color-crema);
-  --superficie-alterna: var(--color-salvia);
-  --texto-claro: var(--color-oliva-oscuro);
-  --texto-claro-secundario: var(--color-texto-secundario-claro);
+  /* --- Modo claro (default) --- */
+  --color-bg: #F3EFE5;              /* Warm Ivory */
+  --color-surface: #FFFDF7;         /* Soft Cream */
+  --color-surface-elevated: #CCBA92; /* Greige, más saturado */
+  --color-primary: #1A200C;         /* Dark Olive, más oscuro para separarse del header/footer */
+  --color-secondary: #668847;       /* Sage, más vivo */
+  --color-accent: #9A561E;          /* Warm Brown, más vivo */
+  --color-accent-hover: #712D0B;    /* Chestnut, más vivo */
+  --color-text: #25271D;            /* Near-black Olive */
+  --color-text-secondary: #69675D;  /* Earthy Gray */
+  --color-border: #E2D6BA;          /* Soft Greige, más cálido */
+ 
+  /* Texto legible sobre fondos con --color-primary.
+     --color-primary se invierte entre modos (oscuro <-> claro),
+     así que este también se invierte para mantener el contraste. */
+  --color-on-primary: var(--color-surface);
+ 
+  /* --- "Ink": banda fija (header, footer, tarjetas) ---
+     No cambia entre modo claro/oscuro; en modo oscuro coincide
+     con el color explícito de "Navbar" de la paleta. */
+  --color-ink: #2F3815;                         /* Dark Olive, más vivo */
+  --color-ink-text: #F2EBDD;                    /* Warm Ivory */
+  --color-ink-text-secondary: #BDB8A9;          /* Muted Beige */
+  --color-ink-border: rgba(175, 96, 36, 0.32);  /* Warm Brown, sutil */
 }
-
+ 
 html.dark-mode {
-  --superficie-clara: #241F10;
-  --superficie-alterna: #2C2614;
-  --texto-claro: var(--color-crema);
-  --texto-claro-secundario: rgba(255, 248, 231, 0.68);
-}
-
-/* Botones con borde terracota, sobre secciones que ahora son oscuras */
-html.dark-mode .outline-button,
-html.dark-mode .category-button {
-  border-color: var(--color-caramelo);
-  color: var(--color-caramelo);
-}
-
-html.dark-mode .outline-button:hover,
-html.dark-mode .outline-button:focus-visible,
-html.dark-mode .category-button.active,
-html.dark-mode .category-button:hover,
-html.dark-mode .category-button:focus-visible {
-  background: var(--color-caramelo);
-  color: var(--color-oliva-oscuro);
+  --color-bg: #10150F;              /* Almost Black Green */
+  --color-surface: #1B2418;         /* Deep Forest */
+  --color-surface-elevated: #243A17; /* Forest Green, más vivo */
+  --color-primary: #241a18;         
+  --color-secondary: #608B46;       /* Muted Green, más vivo */
+  --color-accent: #AF6024;          /* Warm Brown, más vivo */
+  --color-accent-hover: #CA712A;    /* Chestnut, más vivo */
+  --color-text: #F2EBDD;            /* Warm Ivory */
+  --color-text-secondary: #BDB8A9;  /* Muted Beige */
+  --color-border: #345228;          /* Green Gray, más vivo */
+ 
+  --color-on-primary: var(--color-text);
+ 
+  /* Coincide con el "Navbar" explícito de tu paleta oscura */
+  --color-ink: #1E3114;
+  /* --color-ink-text / --color-ink-text-secondary / --color-ink-border
+     se mantienen igual: el header/footer ya viven en modo oscuro
+     permanente, por lo que no necesitan cambiar. */
 }
