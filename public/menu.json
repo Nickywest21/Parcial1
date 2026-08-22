@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "nombre": "Desayuno Tradicional Chapín",
+    "categoria": "desayunos",
+    "precio": 35,
+    "descripcion": "Huevos al gusto, frijoles volteados, plátano frito, queso fresco y tortillas calientes.",
+    "imagen": "/img/menu-desayuno.jpg",
+    "alt": "Plato típico con dos huevos estrellados, frijoles negros y plátanos fritos"
+  },
+  {
+    "id": 2,
+    "nombre": "Pepián de Pollo Tradicional",
+    "categoria": "almuerzos",
+    "precio": 45,
+    "descripcion": "Recado tradicional preparado con semillas tostadas, servido con arroz y verduras.",
+    "imagen": "/img/menu-tipico.jpg",
+    "alt": "Tazón de barro con pepián oscuro, verduras y pieza de pollo acompañado de arroz"
+  },
+  {
+    "id": 3,
+    "nombre": "Hamburguesa La Placita",
+    "categoria": "almuerzos",
+    "precio": 55,
+    "descripcion": "Carne preparada en casa con pan artesanal, queso y vegetales frescos.",
+    "imagen": "/img/menu-hamburguesa.jpg",
+    "alt": "Hamburguesa casera con queso derretido, lechuga y tomate en pan con ajonjolí"
+  },
+  {
+    "id": 4,
+    "nombre": "Café de la Casa",
+    "categoria": "bebidas",
+    "precio": 18,
+    "descripcion": "Café tostado artesanal preparado al momento.",
+    "imagen": "/img/menu-cafe.jpg",
+    "alt": "Taza de café negro caliente humeante"
+  },
+  {
+    "id": 5,
+    "nombre": "Horchata Artesanal Fría",
+    "categoria": "bebidas",
+    "precio": 12,
+    "descripcion": "Refresco tradicional a base de arroz y leche con canela molida.",
+    "imagen": "/img/menu-cafe.jpg",
+    "alt": "Vaso de horchata fresca decorada con una pizca de canela"
+  }
+]
