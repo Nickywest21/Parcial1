@@ -55,7 +55,7 @@
   ========================================= */
 
   /* Naranja cálido */
-  --color-accent: #E47B20;
+  --color-accent: #e8b990;
 
   /* Naranja/rojo oscuro para hover */
   --color-accent-hover: #9E3F19;
@@ -96,7 +96,7 @@
      Esto crea una diferencia visual
      entre Header y Hero.
   */
-  --color-ink: #A9451C;
+  --color-ink: #975941fe;
 
   --color-ink-text: #FFF3E8;
 
@@ -139,7 +139,7 @@ html.dark-mode {
      ACENTOS
   ========================================= */
 
-  --color-accent: #E07816;
+  --color-accent: #bb7737;
 
   --color-accent-hover: #F0953B;
 
