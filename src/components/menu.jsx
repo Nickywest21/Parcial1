@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/menu.css";
 import CategoryFilter from "./categoryFilter";
 import MenuCard from "./menuCard";
 
