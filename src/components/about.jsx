@@ -6,8 +6,8 @@ function About() {
 
         <div className="about-image">
           <img
-            src="/img/about.jpg"
-            alt="Interior acogedor de La Placita"
+            src="/img/about.png"
+            alt="Interior cálido y acogedor del restaurante La Placita"
           />
         </div>
 
@@ -33,7 +33,9 @@ function About() {
 
         <div className="section-heading">
           <span>Lo que nos mueve</span>
+
           <h2>Nuestros valores</h2>
+
           <p>
             Estas son las ideas que guían todo lo que hacemos en La Placita.
           </p>
@@ -43,7 +45,9 @@ function About() {
 
           <article className="service-card">
             <div className="service-icon">01</div>
+
             <h3>Comida con dedicación</h3>
+
             <p>
               Preparamos cada platillo con cuidado, buscando siempre el
               sabor de lo casero.
@@ -52,7 +56,9 @@ function About() {
 
           <article className="service-card">
             <div className="service-icon">02</div>
+
             <h3>Un espacio acogedor</h3>
+
             <p>
               Queremos que te sientas cómodo, sin prisa, como si estuvieras
               en casa.
@@ -61,7 +67,9 @@ function About() {
 
           <article className="service-card">
             <div className="service-icon">03</div>
+
             <h3>Cerca de la comunidad</h3>
+
             <p>
               Nos gusta ser parte del barrio y crear un lugar donde las
               personas quieran quedarse.
