@@ -1,0 +1,452 @@
+[
+  {
+    "id": "desayuno-casa",
+    "nombre": "Desayuno de la casa",
+    "categoria": "desayunos",
+    "precio": 35,
+    "descripcion": "Huevos al gusto con frijoles, plátanos fritos, queso y tortillas.",
+    "foto": "img/menu-desayuno.png",
+    "alt": "Desayuno con huevos, frijoles negros, plátanos fritos, queso y tortillas"
+  },
+  {
+    "id": "desayuno-chapin",
+    "nombre": "Desayuno chapín",
+    "categoria": "desayunos",
+    "precio": 42,
+    "descripcion": "Huevos, frijoles, plátanos, chorizo, queso fresco y tortillas.",
+    "foto": "img/menu-desayuno-chapin.webp",
+    "alt": "Desayuno chapín con huevos, frijoles, plátanos, chorizo, queso y tortillas"
+  },
+  {
+    "id": "huevos-rancheros",
+    "nombre": "Huevos rancheros",
+    "categoria": "desayunos",
+    "precio": 34,
+    "descripcion": "Huevos sobre tortillas con salsa ranchera, frijoles y aguacate.",
+    "foto": "img/menu-huevos-rancheros.webp",
+    "alt": "Huevos rancheros sobre tortillas con salsa, frijoles y aguacate"
+  },
+  {
+    "id": "omelette-vegetales",
+    "nombre": "Omelette de vegetales",
+    "categoria": "desayunos",
+    "precio": 32,
+    "descripcion": "Omelette con tomate, cebolla, chile pimiento, espinaca y queso.",
+    "foto": "img/menu-omelette-vegetales.webp",
+    "alt": "Omelette relleno de vegetales frescos y queso"
+  },
+  {
+    "id": "omelette-jamon-queso",
+    "nombre": "Omelette de jamón y queso",
+    "categoria": "desayunos",
+    "precio": 36,
+    "descripcion": "Omelette de huevo relleno de jamón y queso, acompañado de frijoles.",
+    "foto": "img/menu-omelette-jamon-queso.webp",
+    "alt": "Omelette relleno de jamón y queso acompañado de frijoles"
+  },
+  {
+    "id": "pancakes-fruta",
+    "nombre": "Pancakes con fruta",
+    "categoria": "desayunos",
+    "precio": 30,
+    "descripcion": "Pancakes esponjosos con banano, fresas, miel y mantequilla.",
+    "foto": "img/menu-pancakes-fruta.webp",
+    "alt": "Pancakes con rodajas de banano, fresas, miel y mantequilla"
+  },
+  {
+    "id": "tostadas-francesas",
+    "nombre": "Tostadas francesas",
+    "categoria": "desayunos",
+    "precio": 30,
+    "descripcion": "Pan dorado con canela, miel, azúcar glass y fruta fresca.",
+    "foto": "img/menu-tostadas-francesas.webp",
+    "alt": "Tostadas francesas doradas con miel, azúcar glass y fruta fresca"
+  },
+  {
+    "id": "chilaquiles-huevo",
+    "nombre": "Chilaquiles con huevo",
+    "categoria": "desayunos",
+    "precio": 38,
+    "descripcion": "Totopos con salsa roja, huevo, crema, queso y aguacate.",
+    "foto": "img/menu-chilaquiles-huevo.webp",
+    "alt": "Chilaquiles con salsa roja, huevo, crema, queso y aguacate"
+  },
+  {
+    "id": "avena-fruta",
+    "nombre": "Avena con fruta",
+    "categoria": "desayunos",
+    "precio": 24,
+    "descripcion": "Avena caliente con banano, manzana, canela, pasas y miel.",
+    "foto": "img/menu-avena-fruta.webp",
+    "alt": "Tazón de avena caliente con banano, manzana, pasas y canela"
+  },
+  {
+    "id": "tamal-colorado",
+    "nombre": "Tamal colorado con pan",
+    "categoria": "desayunos",
+    "precio": 25,
+    "descripcion": "Tamal guatemalteco de pollo con recado colorado y pan francés.",
+    "foto": "img/menu-tamal-colorado.webp",
+    "alt": "Tamal colorado guatemalteco servido en hoja de plátano con pan francés"
+  },
+  {
+    "id": "plato-tipico",
+    "nombre": "Plato típico",
+    "categoria": "almuerzos",
+    "precio": 45,
+    "descripcion": "Pollo a la parrilla con arroz, frijoles, ensalada, aguacate y tortillas.",
+    "foto": "img/menu-tipico.png",
+    "alt": "Plato con pollo a la parrilla, arroz, frijoles, ensalada, aguacate y tortillas"
+  },
+  {
+    "id": "pepian-pollo",
+    "nombre": "Pepián de pollo",
+    "categoria": "almuerzos",
+    "precio": 48,
+    "descripcion": "Pollo en recado de pepitoria y especias, con arroz y vegetales.",
+    "foto": "img/menu-pepian-pollo.webp",
+    "alt": "Pepián de pollo en recado oscuro acompañado de arroz y vegetales"
+  },
+  {
+    "id": "jocon-pollo",
+    "nombre": "Jocón de pollo",
+    "categoria": "almuerzos",
+    "precio": 46,
+    "descripcion": "Pollo en salsa verde de miltomate y cilantro, servido con arroz.",
+    "foto": "img/menu-jocon-pollo.webp",
+    "alt": "Jocón de pollo con salsa verde de miltomate acompañado de arroz"
+  },
+  {
+    "id": "hilachas-arroz",
+    "nombre": "Hilachas con arroz",
+    "categoria": "almuerzos",
+    "precio": 44,
+    "descripcion": "Carne deshebrada en recado de tomate con papa, zanahoria y arroz.",
+    "foto": "img/menu-hilachas-arroz.webp",
+    "alt": "Hilachas de carne con papa y zanahoria acompañadas de arroz blanco"
+  },
+  {
+    "id": "carne-asada",
+    "nombre": "Carne asada",
+    "categoria": "almuerzos",
+    "precio": 58,
+    "descripcion": "Carne de res a la parrilla con guacamole, frijoles, cebollines y tortillas.",
+    "foto": "img/menu-carne-asada.webp",
+    "alt": "Carne asada con guacamole, frijoles, cebollines y tortillas"
+  },
+  {
+    "id": "pollo-plancha",
+    "nombre": "Pollo a la plancha",
+    "categoria": "almuerzos",
+    "precio": 46,
+    "descripcion": "Pechuga de pollo a la plancha con vegetales salteados y arroz.",
+    "foto": "img/menu-pollo-plancha.webp",
+    "alt": "Pechuga de pollo a la plancha con vegetales salteados y arroz"
+  },
+  {
+    "id": "arroz-pollo",
+    "nombre": "Arroz con pollo",
+    "categoria": "almuerzos",
+    "precio": 40,
+    "descripcion": "Arroz sazonado con pollo desmenuzado, zanahoria, arvejas y chile pimiento.",
+    "foto": "img/menu-arroz-pollo.webp",
+    "alt": "Arroz con pollo desmenuzado, zanahoria, arvejas y chile pimiento"
+  },
+  {
+    "id": "chuleta-adobada",
+    "nombre": "Chuleta adobada",
+    "categoria": "almuerzos",
+    "precio": 49,
+    "descripcion": "Chuleta de cerdo en adobo casero con papas, ensalada y tortillas.",
+    "foto": "img/menu-chuleta-adobada.webp",
+    "alt": "Chuleta de cerdo adobada con papas, ensalada fresca y tortillas"
+  },
+  {
+    "id": "caldo-res",
+    "nombre": "Caldo de res",
+    "categoria": "almuerzos",
+    "precio": 42,
+    "descripcion": "Caldo casero de res con papa, güisquil, zanahoria, elote y arroz.",
+    "foto": "img/menu-caldo-res.webp",
+    "alt": "Caldo de res con papa, güisquil, zanahoria, elote y arroz"
+  },
+  {
+    "id": "filete-pescado",
+    "nombre": "Filete de pescado",
+    "categoria": "almuerzos",
+    "precio": 54,
+    "descripcion": "Filete de pescado a la plancha con arroz, ensalada y limón.",
+    "foto": "img/menu-filete-pescado.webp",
+    "alt": "Filete de pescado a la plancha con arroz, ensalada fresca y limón"
+  },
+  {
+    "id": "hamburguesa-casa",
+    "nombre": "Hamburguesa de la casa",
+    "categoria": "cenas",
+    "precio": 55,
+    "descripcion": "Carne, queso, lechuga, tomate y cebolla, acompañada de papas doradas.",
+    "foto": "img/menu-hamburguesa.png",
+    "alt": "Hamburguesa con carne, queso, lechuga, tomate y cebolla, acompañada de papas doradas"
+  },
+  {
+    "id": "tostadas-chapinas",
+    "nombre": "Tostadas chapinas",
+    "categoria": "cenas",
+    "precio": 28,
+    "descripcion": "Tres tostadas crujientes de guacamole, frijol y salsa de tomate.",
+    "foto": "img/menu-tostadas-chapinas.webp",
+    "alt": "Tres tostadas chapinas de guacamole, frijol y salsa de tomate"
+  },
+  {
+    "id": "enchiladas-guatemaltecas",
+    "nombre": "Enchiladas guatemaltecas",
+    "categoria": "cenas",
+    "precio": 32,
+    "descripcion": "Tostadas con carne, curtido de remolacha, huevo, queso y perejil.",
+    "foto": "img/menu-enchiladas-guatemaltecas.webp",
+    "alt": "Enchiladas guatemaltecas con curtido de remolacha, huevo y queso"
+  },
+  {
+    "id": "dobladas-pollo",
+    "nombre": "Dobladas de pollo",
+    "categoria": "cenas",
+    "precio": 34,
+    "descripcion": "Dobladas crujientes rellenas de pollo con salsa, curtido y queso.",
+    "foto": "img/menu-dobladas-pollo.webp",
+    "alt": "Dobladas crujientes rellenas de pollo con salsa, curtido y queso"
+  },
+  {
+    "id": "sandwich-pollo",
+    "nombre": "Sándwich de pollo",
+    "categoria": "cenas",
+    "precio": 38,
+    "descripcion": "Pan artesanal con pollo, lechuga, tomate, aguacate y mayonesa casera.",
+    "foto": "img/menu-sandwich-pollo.webp",
+    "alt": "Sándwich de pollo con lechuga, tomate y aguacate en pan artesanal"
+  },
+  {
+    "id": "quesadillas-mixtas",
+    "nombre": "Quesadillas mixtas",
+    "categoria": "cenas",
+    "precio": 42,
+    "descripcion": "Tortillas de harina con pollo, carne, queso y vegetales salteados.",
+    "foto": "img/menu-quesadillas-mixtas.webp",
+    "alt": "Quesadillas de harina rellenas de pollo, carne, queso y vegetales"
+  },
+  {
+    "id": "nachos-casa",
+    "nombre": "Nachos de la casa",
+    "categoria": "cenas",
+    "precio": 40,
+    "descripcion": "Totopos con carne, frijoles, queso, pico de gallo y guacamole.",
+    "foto": "img/menu-nachos-casa.webp",
+    "alt": "Nachos con carne, frijoles, queso, pico de gallo y guacamole"
+  },
+  {
+    "id": "tacos-carne",
+    "nombre": "Tacos de carne",
+    "categoria": "cenas",
+    "precio": 39,
+    "descripcion": "Cuatro tacos de carne con cebolla, cilantro, salsa y limón.",
+    "foto": "img/menu-tacos-carne.webp",
+    "alt": "Cuatro tacos de carne con cebolla, cilantro, salsa y limón"
+  },
+  {
+    "id": "sopa-pollo",
+    "nombre": "Sopa de pollo",
+    "categoria": "cenas",
+    "precio": 32,
+    "descripcion": "Sopa casera de pollo con verduras, arroz y hierbas frescas.",
+    "foto": "img/menu-sopa-pollo.webp",
+    "alt": "Sopa casera de pollo con verduras, arroz y hierbas frescas"
+  },
+  {
+    "id": "ensalada-pollo",
+    "nombre": "Ensalada con pollo",
+    "categoria": "cenas",
+    "precio": 42,
+    "descripcion": "Lechuga, pollo a la plancha, tomate, pepino, aguacate y aderezo.",
+    "foto": "img/menu-ensalada-pollo.webp",
+    "alt": "Ensalada fresca con pollo a la plancha, tomate, pepino y aguacate"
+  },
+  {
+    "id": "rellenitos-platano",
+    "nombre": "Rellenitos de plátano",
+    "categoria": "postres",
+    "precio": 20,
+    "descripcion": "Rellenitos de plátano maduro con frijol dulce, azúcar y canela.",
+    "foto": "img/menu-rellenitos-platano.webp",
+    "alt": "Rellenitos de plátano con frijol dulce espolvoreados con azúcar"
+  },
+  {
+    "id": "flan-casa",
+    "nombre": "Flan de la casa",
+    "categoria": "postres",
+    "precio": 22,
+    "descripcion": "Flan cremoso de vainilla cubierto con caramelo preparado en casa.",
+    "foto": "img/menu-flan-casa.webp",
+    "alt": "Porción de flan cremoso de vainilla cubierto con caramelo"
+  },
+  {
+    "id": "pastel-chocolate",
+    "nombre": "Pastel de chocolate",
+    "categoria": "postres",
+    "precio": 25,
+    "descripcion": "Pastel húmedo de chocolate con cobertura cremosa y virutas de cacao.",
+    "foto": "img/menu-pastel-chocolate.webp",
+    "alt": "Porción de pastel húmedo de chocolate con cobertura cremosa"
+  },
+  {
+    "id": "pastel-tres-leches",
+    "nombre": "Pastel de tres leches",
+    "categoria": "postres",
+    "precio": 26,
+    "descripcion": "Bizcocho suave bañado en tres leches con crema y canela.",
+    "foto": "img/menu-pastel-tres-leches.webp",
+    "alt": "Porción de pastel de tres leches decorada con crema y canela"
+  },
+  {
+    "id": "arroz-leche",
+    "nombre": "Arroz con leche",
+    "categoria": "postres",
+    "precio": 18,
+    "descripcion": "Arroz cocido lentamente con leche, canela, vainilla y pasas.",
+    "foto": "img/menu-arroz-leche.webp",
+    "alt": "Tazón de arroz con leche decorado con canela y pasas"
+  },
+  {
+    "id": "torrejas-miel",
+    "nombre": "Torrejas con miel",
+    "categoria": "postres",
+    "precio": 22,
+    "descripcion": "Torrejas de pan bañadas en miel especiada con canela y clavo.",
+    "foto": "img/menu-torrejas-miel.webp",
+    "alt": "Torrejas de pan bañadas en miel especiada con canela"
+  },
+  {
+    "id": "cheesecake-fresa",
+    "nombre": "Cheesecake de fresa",
+    "categoria": "postres",
+    "precio": 28,
+    "descripcion": "Cheesecake cremoso sobre base de galleta con salsa de fresa.",
+    "foto": "img/menu-cheesecake-fresa.webp",
+    "alt": "Porción de cheesecake cremoso con salsa y trozos de fresa"
+  },
+  {
+    "id": "brownie-helado",
+    "nombre": "Brownie con helado",
+    "categoria": "postres",
+    "precio": 30,
+    "descripcion": "Brownie tibio de chocolate con helado de vainilla y salsa de cacao.",
+    "foto": "img/menu-brownie-helado.webp",
+    "alt": "Brownie tibio de chocolate con una bola de helado de vainilla"
+  },
+  {
+    "id": "helado-artesanal",
+    "nombre": "Helado artesanal",
+    "categoria": "postres",
+    "precio": 20,
+    "descripcion": "Dos bolas de helado artesanal con sabores disponibles del día.",
+    "foto": "img/menu-helado-artesanal.webp",
+    "alt": "Dos bolas de helado artesanal servidas en una copa"
+  },
+  {
+    "id": "fruta-yogur",
+    "nombre": "Fruta con yogur",
+    "categoria": "postres",
+    "precio": 22,
+    "descripcion": "Fruta fresca de temporada con yogur natural, granola y miel.",
+    "foto": "img/menu-fruta-yogur.webp",
+    "alt": "Copa de fruta fresca con yogur natural, granola y miel"
+  },
+  {
+    "id": "cafe-casa",
+    "nombre": "Café de la casa",
+    "categoria": "bebidas",
+    "precio": 18,
+    "descripcion": "Café guatemalteco caliente preparado al momento.",
+    "foto": "img/menu-cafe.png",
+    "alt": "Taza de café negro caliente sobre una servilleta de tejido guatemalteco"
+  },
+  {
+    "id": "limonada-hierbabuena",
+    "nombre": "Limonada con hierbabuena",
+    "categoria": "bebidas",
+    "precio": 16,
+    "descripcion": "Limonada natural con hojas de hierbabuena y hielo.",
+    "foto": "img/menu-limonada-hierbabuena.webp",
+    "alt": "Vaso de limonada natural con hielo, limón y hojas de hierbabuena"
+  },
+  {
+    "id": "horchata",
+    "nombre": "Horchata",
+    "categoria": "bebidas",
+    "precio": 15,
+    "descripcion": "Bebida fría de arroz con leche, canela y un toque de vainilla.",
+    "foto": "img/menu-horchata.webp",
+    "alt": "Vaso de horchata fría de arroz decorada con canela"
+  },
+  {
+    "id": "rosa-jamaica",
+    "nombre": "Rosa de Jamaica",
+    "categoria": "bebidas",
+    "precio": 15,
+    "descripcion": "Refresco natural de flor de Jamaica servido con hielo.",
+    "foto": "img/menu-rosa-jamaica.webp",
+    "alt": "Vaso de refresco rojo de rosa de Jamaica con hielo"
+  },
+  {
+    "id": "refresco-tamarindo",
+    "nombre": "Refresco de tamarindo",
+    "categoria": "bebidas",
+    "precio": 15,
+    "descripcion": "Refresco artesanal de tamarindo con hielo y dulzor equilibrado.",
+    "foto": "img/menu-refresco-tamarindo.webp",
+    "alt": "Vaso de refresco artesanal de tamarindo servido con hielo"
+  },
+  {
+    "id": "chocolate-caliente",
+    "nombre": "Chocolate caliente",
+    "categoria": "bebidas",
+    "precio": 20,
+    "descripcion": "Chocolate guatemalteco caliente con leche y canela.",
+    "foto": "img/menu-chocolate-caliente.webp",
+    "alt": "Taza de chocolate guatemalteco caliente con leche y canela"
+  },
+  {
+    "id": "atol-elote",
+    "nombre": "Atol de elote",
+    "categoria": "bebidas",
+    "precio": 18,
+    "descripcion": "Bebida caliente y cremosa de maíz dulce con canela.",
+    "foto": "img/menu-atol-elote.webp",
+    "alt": "Taza de atol de elote cremoso decorado con granos de maíz y canela"
+  },
+  {
+    "id": "licuado-fresa",
+    "nombre": "Licuado de fresa",
+    "categoria": "bebidas",
+    "precio": 22,
+    "descripcion": "Licuado cremoso de fresas naturales preparado con leche.",
+    "foto": "img/menu-licuado-fresa.webp",
+    "alt": "Vaso de licuado cremoso de fresa preparado con leche"
+  },
+  {
+    "id": "naranjada-natural",
+    "nombre": "Naranjada natural",
+    "categoria": "bebidas",
+    "precio": 16,
+    "descripcion": "Jugo natural de naranja servido frío con hielo.",
+    "foto": "img/menu-naranjada-natural.webp",
+    "alt": "Vaso de jugo natural de naranja servido con hielo y una rodaja de naranja"
+  },
+  {
+    "id": "te-frio-limon",
+    "nombre": "Té frío de limón",
+    "categoria": "bebidas",
+    "precio": 15,
+    "descripcion": "Té negro frío con limón fresco, hielo y dulzor ligero.",
+    "foto": "img/menu-te-frio-limon.webp",
+    "alt": "Vaso de té negro frío con hielo y rodajas de limón"
+  }
+]
