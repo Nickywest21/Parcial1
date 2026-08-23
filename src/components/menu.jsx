@@ -146,12 +146,18 @@ function Menu() {
       {!cargando && !error && (
         <>
           <div className="menu-controls">
+
+            {/* BUSCADOR */}
             <div className="menu-search">
-              <label htmlFor="buscar-platillo">
+              <label
+                className="menu-search-label"
+                htmlFor="buscar-platillo"
+              >
                 Buscar en el menú
               </label>
 
               <input
+                className="menu-search-input"
                 id="buscar-platillo"
                 type="search"
                 value={busqueda}
@@ -163,13 +169,18 @@ function Menu() {
               />
             </div>
 
+            {/* FILTROS POR CATEGORÍA */}
             <CategoryFilter
               categorias={categorias}
               categoriaActiva={categoriaActiva}
               alCambiarCategoria={setCategoriaActiva}
             />
 
-            <p className="menu-results" aria-live="polite">
+            {/* RESULTADOS */}
+            <p
+              className="menu-results"
+              aria-live="polite"
+            >
               {platillosFiltrados.length}{" "}
               {platillosFiltrados.length === 1
                 ? "platillo encontrado"
@@ -221,7 +232,10 @@ function Menu() {
                 diferente.
               </p>
 
-              <button type="button" onClick={limpiarFiltros}>
+              <button
+                type="button"
+                onClick={limpiarFiltros}
+              >
                 Ver todo el menú
               </button>
             </div>

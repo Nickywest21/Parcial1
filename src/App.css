@@ -1115,3 +1115,350 @@ html.dark-mode .contact-button:focus-visible {
 html.dark-mode .contact-form-card {
   background: var(--color-ink);
 }
+
+/* =========================================
+   MENU — CONTROLES
+========================================= */
+
+.menu-controls {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: -25px auto 0;
+}
+
+
+/* =========================================
+   MENU — BUSCADOR
+========================================= */
+
+.menu-search {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 0 auto 30px;
+}
+
+.menu-search-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: var(--color-text);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.menu-search-input {
+  display: block;
+
+  width: 100%;
+  min-height: 52px;
+
+  padding: 13px 17px;
+
+  border: 2px solid var(--color-border);
+
+  background: var(--color-surface);
+  color: var(--color-text);
+
+  border-radius: 0;
+
+  outline: none;
+
+  font-size: 1rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.menu-search-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.85;
+}
+
+.menu-search-input:hover {
+  border-color: var(--color-secondary);
+}
+
+.menu-search-input:focus-visible {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(196, 90, 39, 0.25);
+}
+
+
+/* =========================================
+   MENU — RESULTADOS
+========================================= */
+
+.menu-results {
+  margin: 25px 0 35px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   MENU — MOSTRAR MÁS
+========================================= */
+
+.menu-more {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 50px;
+}
+
+.menu-more-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 220px;
+  min-height: 50px;
+
+  padding: 13px 28px;
+
+  border: 2px solid var(--color-primary);
+
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menu-more-button:hover {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+
+  transform: translateY(-2px);
+}
+
+.menu-more-button:active {
+  transform: translateY(0);
+}
+
+.menu-more-button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+
+/* =========================================
+   MENU — ESTADOS
+========================================= */
+
+.menu-status {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: var(--color-text);
+
+  text-align: center;
+}
+
+.menu-error {
+  padding: 30px;
+
+  border: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+}
+
+.menu-error button,
+.menu-empty button {
+  margin-top: 15px;
+
+  padding: 12px 22px;
+
+  border: 2px solid var(--color-primary);
+
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menu-error button:hover,
+.menu-empty button:hover,
+.menu-error button:focus-visible,
+.menu-empty button:focus-visible {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   MENU — SIN RESULTADOS
+========================================= */
+
+.menu-empty {
+  max-width: 600px;
+
+  margin: 20px auto 0;
+  padding: 45px 30px;
+
+  border: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  text-align: center;
+}
+
+.menu-empty h3 {
+  margin: 0 0 12px;
+
+  color: var(--color-text);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+}
+
+.menu-empty p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   MENU — MODO OSCURO
+========================================= */
+
+html.dark-mode .menu-search-label {
+  color: var(--color-ink-text);
+}
+
+html.dark-mode .menu-search-input {
+  border-color: var(--color-secondary);
+
+  background: var(--color-surface);
+  color: var(--color-ink-text);
+}
+
+html.dark-mode .menu-search-input::placeholder {
+  color: var(--color-ink-text-secondary);
+
+  opacity: 1;
+}
+
+html.dark-mode .menu-search-input:hover {
+  border-color: var(--color-accent);
+}
+
+html.dark-mode .menu-search-input:focus-visible {
+  border-color: var(--color-accent-hover);
+
+  box-shadow:
+    0 0 0 3px rgba(240, 149, 59, 0.3);
+}
+
+html.dark-mode .menu-results {
+  color: var(--color-ink-text-secondary);
+}
+
+html.dark-mode .menu-more-button {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+
+  color: var(--color-ink-text);
+}
+
+html.dark-mode .menu-more-button:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+html.dark-mode .menu-empty,
+html.dark-mode .menu-error {
+  background: var(--color-surface);
+
+  color: var(--color-ink-text);
+}
+
+
+/* =========================================
+   NOSOTROS — IMAGEN
+========================================= */
+
+.about-image {
+  min-height: 500px;
+
+  overflow: hidden;
+}
+
+.about-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.02);
+}
+
+
+/* =========================================
+   RESPONSIVE — MENU
+========================================= */
+
+@media (max-width: 700px) {
+
+  .menu-controls {
+    margin-top: -10px;
+  }
+
+  .menu-search {
+    max-width: 100%;
+  }
+
+  .menu-more {
+    margin-top: 40px;
+  }
+
+  .menu-more-button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
