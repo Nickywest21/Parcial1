@@ -3,6 +3,10 @@
 	outline-offset: 4px;
 }
 
+/* =========================================
+   PREFERENCIAS DE CONTRASTE DEL SISTEMA
+========================================= */
+
 @media (prefers-contrast: more) {
 	:root {
 		--color-oliva-oscuro: #000000;
@@ -57,6 +61,10 @@
 	}
 }
 
+/* =========================================
+   PALETA DE ALTO CONTRASTE - MODO CLARO
+========================================= */
+
 :is(html.high-contrast, body.high-contrast) {
 	--color-bg: #ffffff;
 	--color-surface: #ffffff;
@@ -80,6 +88,10 @@
 	--ally-border: #000000;
 }
 
+/* =========================================
+   PALETA DE ALTO CONTRASTE - MODO OSCURO
+========================================= */
+
 html.dark-mode.high-contrast {
 	--color-bg: #000000;
 	--color-surface: #000000;
@@ -102,6 +114,10 @@ html.dark-mode.high-contrast {
 	--ally-accent: #ffff00;
 	--ally-border: #ffffff;
 }
+
+/* =========================================
+   FONDOS, BORDES Y CONTROLES
+========================================= */
 
 :is(html.high-contrast body, body.high-contrast),
 :is(html.high-contrast body, body.high-contrast) main,
@@ -134,6 +150,10 @@ html.dark-mode.high-contrast {
 :is(html.high-contrast body, body.high-contrast) select {
 	background-color: var(--ally-surface);
 }
+
+/* =========================================
+   TEXTOS Y ENLACES
+========================================= */
 
 :is(html.high-contrast body, body.high-contrast) :where(
 	h1,
@@ -168,6 +188,10 @@ html.dark-mode.high-contrast {
 	color: var(--ally-text) !important;
 }
 
+/* =========================================
+   COMPATIBILIDAD CON EL MODO OSCURO NORMAL
+========================================= */
+
 html.dark-mode:not(.high-contrast) .about-content .eyebrow,
 html.dark-mode:not(.high-contrast) .section-heading > span {
 	color: #ffcf70 !important;
@@ -191,11 +215,17 @@ html.dark-mode:not(.high-contrast) .menu-section .section-heading p {
 	color: #fff8e7 !important;
 }
 
+/* =========================================
+   COMPONENTES EN ALTO CONTRASTE
+========================================= */
+
 :is(html.high-contrast body, body.high-contrast) .menu-section .section-heading > span,
 :is(html.high-contrast body, body.high-contrast) .menu-section .section-heading h2,
 :is(html.high-contrast body, body.high-contrast) .menu-section .section-heading p {
 	color: var(--color-text) !important;
 }
+
+/* Tarjetas de servicios */
 
 :is(html.high-contrast body, body.high-contrast) .service-card {
 	background-color: var(--color-surface-elevated);
@@ -211,6 +241,8 @@ html.dark-mode:not(.high-contrast) .menu-section .section-heading p {
 	color: var(--color-text) !important;
 }
 
+/* Estados de botones y filtros */
+
 :is(html.high-contrast body, body.high-contrast) button:hover,
 :is(html.high-contrast body, body.high-contrast) button:focus-visible {
 	background-color: var(--color-accent) !important;
@@ -224,6 +256,8 @@ html.dark-mode:not(.high-contrast) .menu-section .section-heading p {
 	background-color: var(--color-accent) !important;
 	color: #000000 !important;
 }
+
+/* Botones de acciones principales */
 
 :is(html.high-contrast body, body.high-contrast) button,
 :is(html.high-contrast body, body.high-contrast) .header-button,
@@ -247,6 +281,8 @@ html.dark-mode:not(.high-contrast) .menu-section .section-heading p {
 	background-color: var(--color-accent) !important;
 	color: #000000 !important;
 }
+
+/* Tarjetas de platillos: siempre texto negro */
 
 :is(html.high-contrast body, body.high-contrast) .menu-card {
 	background-color: #ffffff !important;
