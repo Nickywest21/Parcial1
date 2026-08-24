@@ -45,7 +45,10 @@ function ContactForm() {
     }
 
     if (!formulario.mensaje.trim()) {
-      nuevosErrores.mensaje = "El mensaje es obligatorio.";
+    nuevosErrores.mensaje = "El mensaje es obligatorio.";
+    } else if (formulario.mensaje.trim().length < 15) {
+      nuevosErrores.mensaje =
+        "El mensaje debe tener al menos 15 caracteres.";
     }
 
     return nuevosErrores;
