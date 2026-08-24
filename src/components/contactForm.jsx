@@ -196,6 +196,7 @@ const manejarEnvio = (e) => {
                 placeholder="Escribe tu pregunta o solicitud..."
                 rows="5"
                 required
+                minLength={15}
                 aria-invalid={!!errores.mensaje}
                 aria-describedby={
                   errores.mensaje ? "error-mensaje" : undefined
