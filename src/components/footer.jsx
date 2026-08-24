@@ -54,7 +54,7 @@ function Footer() {
 
       <div className="footer-bottom">
         <p>
-          © 2026 La Placita. Todos los derechos reservados.
+          © 2026 La Placita.G4. Todos los derechos reservados. 
         </p>
       </div>
 

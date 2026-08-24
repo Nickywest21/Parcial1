@@ -45,7 +45,10 @@ function ContactForm() {
     }
 
     if (!formulario.mensaje.trim()) {
-      nuevosErrores.mensaje = "El mensaje es obligatorio.";
+    nuevosErrores.mensaje = "El mensaje es obligatorio.";
+    } else if (formulario.mensaje.trim().length < 15) {
+      nuevosErrores.mensaje =
+        "El mensaje debe tener al menos 15 caracteres.";
     }
 
     return nuevosErrores;
@@ -193,6 +196,7 @@ const manejarEnvio = (e) => {
                 placeholder="Escribe tu pregunta o solicitud..."
                 rows="5"
                 required
+                minLength={15}
                 aria-invalid={!!errores.mensaje}
                 aria-describedby={
                   errores.mensaje ? "error-mensaje" : undefined
