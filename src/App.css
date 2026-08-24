@@ -463,52 +463,50 @@ a {
 
 
 /* =========================================
-   MENU
+   MENU 
 ========================================= */
 
 .menu-section {
-  background: var(--superficie-clara);
+  background: var(--color-bg, #F3EFE5);
+  transition: background 0.3s ease;
 }
 
 .category-buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
-
+  gap: 12px;
   margin-bottom: 50px;
-
   flex-wrap: wrap;
 }
 
 .category-button {
-  padding: 11px 25px;
-
-  border: 1px solid var(--color-terracota);
-
-  background: transparent;
-  color: var(--color-terracota);
-
+  padding: 10px 24px;
+  border: 1.5px solid var(--color-border, #E2D6BA);
+  background: var(--color-surface, #FFFDF7);
+  color: var(--color-text, #25271D);
   font-weight: 700;
-
+  border-radius: 999px;
   cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.category-button.active,
-.category-button:hover,
-.category-button:focus-visible {
-  background: var(--color-terracota);
-  color: var(--color-crema);
+.category-button:hover {
+  border-color: var(--color-accent, #9A561E);
+  color: var(--color-accent, #9A561E);
+  transform: translateY(-1px);
+}
+
+.category-button.active {
+  background: var(--color-accent, #9A561E);
+  color: var(--color-surface, #FFFDF7);
+  border-color: var(--color-accent, #9A561E);
+  box-shadow: 0 4px 12px rgba(154, 86, 30, 0.25);
 }
 
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -516,29 +514,37 @@ a {
 .menu-card {
   display: grid;
   grid-template-columns: 180px 1fr;
-
   min-height: 180px;
+  background: var(--color-surface, #FFFDF7);
+  border: 1px solid var(--color-border, #E2D6BA);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  background: var(--color-oliva-oscuro);
-
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+.menu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .menu-card-image {
   min-height: 180px;
+  background: var(--color-surface-elevated, #CCBA92);
 }
 
 .menu-card-image img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
 }
 
 .menu-card-content {
-  padding: 25px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .menu-card-title {
@@ -546,35 +552,85 @@ a {
   justify-content: space-between;
   gap: 15px;
   align-items: flex-start;
+  margin-bottom: 8px;
 }
 
 .menu-card h3 {
   margin: 0;
-
-  color: var(--color-crema);
-
+  color: var(--color-primary, #1A200C);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
 }
 
 .menu-card-title span {
-  color: var(--color-caramelo);
+  color: var(--color-accent, #9A561E);
   font-weight: 800;
   white-space: nowrap;
 }
 
 .menu-card p {
-  color: var(--color-texto-secundario-oscuro);
-  line-height: 1.6;
+  margin: 0;
+  color: var(--color-text-secondary, #69675D);
+  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
-.menu-link {
-  color: var(--color-caramelo);
+/* Skeleton Loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
 
-  font-size: 0.9rem;
-  font-weight: 800;
+.skeleton-card {
+  pointer-events: none;
+}
 
-  text-decoration: none;
+.skeleton-image {
+  width: 100%;
+  min-height: 180px;
+  background: linear-gradient(90deg, var(--color-surface-elevated, #CCBA92) 25%, var(--color-surface, #FFFDF7) 50%, var(--color-surface-elevated, #CCBA92) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-line {
+  height: 14px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--color-surface-elevated, #CCBA92) 25%, var(--color-surface, #FFFDF7) 50%, var(--color-surface-elevated, #CCBA92) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-title {
+  width: 60%;
+  height: 20px;
+}
+
+.skeleton-text {
+  width: 90%;
+}
+
+.skeleton-text.short {
+  width: 45%;
+}
+
+.menu-status-error {
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-surface, #FFFDF7);
+  border: 1px solid var(--color-accent, #9A561E);
+  border-radius: 8px;
+  color: var(--color-text, #25271D);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.menu-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-secondary, #69675D);
+  padding: 2rem 0;
 }
 
 
