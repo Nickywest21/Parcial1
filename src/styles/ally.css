@@ -1,6 +1,10 @@
+/* =========================================
+   ACCESIBILIDAD Y ALTO CONTRASTE — LA PLACITA
+========================================= */
+
 :where(a, button, input, textarea, select, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
-	outline: 3px solid #ffbf00;
-	outline-offset: 4px;
+  outline: 3px solid #ffbf00;
+  outline-offset: 4px;
 }
 
 /* =========================================
@@ -8,57 +12,57 @@
 ========================================= */
 
 @media (prefers-contrast: more) {
-	:root {
-		--color-oliva-oscuro: #000000;
-		--color-terracota: #000000;
-		--color-caramelo: #000000;
-		--color-crema: #ffffff;
-		--color-salvia: #ffffff;
-		--color-texto-secundario-oscuro: #000000;
-		--color-texto-secundario-claro: #000000;
-		--superficie-clara: #ffffff;
-		--superficie-alterna: #ffffff;
-		--texto-claro: #000000;
-		--texto-claro-secundario: #000000;
-		--ally-background: #ffffff;
-		--ally-surface: #ffffff;
-		--ally-text: #000000;
-		--ally-accent: #0000ee;
-		--ally-border: #000000;
-	}
+  :root {
+    --color-oliva-oscuro: #000000;
+    --color-terracota: #000000;
+    --color-caramelo: #000000;
+    --color-crema: #ffffff;
+    --color-salvia: #ffffff;
+    --color-texto-secundario-oscuro: #000000;
+    --color-texto-secundario-claro: #000000;
+    --superficie-clara: #ffffff;
+    --superficie-alterna: #ffffff;
+    --texto-claro: #000000;
+    --texto-claro-secundario: #000000;
+    --ally-background: #ffffff;
+    --ally-surface: #ffffff;
+    --ally-text: #000000;
+    --ally-accent: #0000ee;
+    --ally-border: #000000;
+  }
 
-	html,
-	body,
-	main,
-	header,
-	footer,
-	section,
-	article,
-	nav {
-		background-color: var(--ally-background);
-		color: var(--ally-text);
-	}
+  html,
+  body,
+  main,
+  header,
+  footer,
+  section,
+  article,
+  nav {
+    background-color: var(--ally-background);
+    color: var(--ally-text);
+  }
 
-	a,
-	button,
-	input,
-	textarea,
-	select {
-		border-color: var(--ally-border);
-		color: var(--ally-text);
-	}
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    border-color: var(--ally-border);
+    color: var(--ally-text);
+  }
 
-	a {
-		color: var(--ally-accent);
-		text-decoration: underline;
-	}
+  a {
+    color: var(--ally-accent);
+    text-decoration: underline;
+  }
 
-	button,
-	input,
-	textarea,
-	select {
-		background-color: var(--ally-surface);
-	}
+  button,
+  input,
+  textarea,
+  select {
+    background-color: var(--ally-surface);
+  }
 }
 
 /* =========================================
@@ -66,26 +70,26 @@
 ========================================= */
 
 :is(html.high-contrast, body.high-contrast) {
-	--color-bg: #ffffff;
-	--color-surface: #ffffff;
-	--color-surface-elevated: #f2f2f2;
-	--color-primary: #000000;
-	--color-secondary: #000000;
-	--color-accent: #ffff00;
-	--color-accent-hover: #000000;
-	--color-text: #000000;
-	--color-text-secondary: #000000;
-	--color-border: #000000;
-	--color-on-primary: #ffffff;
-	--color-ink: #000000;
-	--color-ink-text: #ffffff;
-	--color-ink-text-secondary: #ffffff;
-	--color-ink-border: #ffffff;
-	--ally-background: #ffffff;
-	--ally-surface: #ffffff;
-	--ally-text: #000000;
-	--ally-accent: #0000ee;
-	--ally-border: #000000;
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f2f2f2;
+  --color-primary: #000000;
+  --color-secondary: #000000;
+  --color-accent: #ffff00;
+  --color-accent-hover: #000000;
+  --color-text: #000000;
+  --color-text-secondary: #000000;
+  --color-border: #000000;
+  --color-on-primary: #ffffff;
+  --color-ink: #000000;
+  --color-ink-text: #ffffff;
+  --color-ink-text-secondary: #ffffff;
+  --color-ink-border: #ffffff;
+  --ally-background: #ffffff;
+  --ally-surface: #ffffff;
+  --ally-text: #000000;
+  --ally-accent: #0000ee;
+  --ally-border: #000000;
 }
 
 /* =========================================
@@ -93,26 +97,26 @@
 ========================================= */
 
 html.dark-mode.high-contrast {
-	--color-bg: #000000;
-	--color-surface: #000000;
-	--color-surface-elevated: #1a1a1a;
-	--color-primary: #ffffff;
-	--color-secondary: #ffffff;
-	--color-accent: #ffff00;
-	--color-accent-hover: #ffff00;
-	--color-text: #ffffff;
-	--color-text-secondary: #ffffff;
-	--color-border: #ffffff;
-	--color-on-primary: #000000;
-	--color-ink: #000000;
-	--color-ink-text: #ffffff;
-	--color-ink-text-secondary: #ffffff;
-	--color-ink-border: #ffffff;
-	--ally-background: #000000;
-	--ally-surface: #000000;
-	--ally-text: #ffffff;
-	--ally-accent: #ffff00;
-	--ally-border: #ffffff;
+  --color-bg: #000000;
+  --color-surface: #000000;
+  --color-surface-elevated: #1a1a1a;
+  --color-primary: #ffffff;
+  --color-secondary: #ffffff;
+  --color-accent: #ffff00;
+  --color-accent-hover: #ffff00;
+  --color-text: #ffffff;
+  --color-text-secondary: #ffffff;
+  --color-border: #ffffff;
+  --color-on-primary: #000000;
+  --color-ink: #000000;
+  --color-ink-text: #ffffff;
+  --color-ink-text-secondary: #ffffff;
+  --color-ink-border: #ffffff;
+  --ally-background: #000000;
+  --ally-surface: #000000;
+  --ally-text: #ffffff;
+  --ally-accent: #ffff00;
+  --ally-border: #ffffff;
 }
 
 /* =========================================
@@ -126,8 +130,8 @@ html.dark-mode.high-contrast {
 :is(html.high-contrast body, body.high-contrast) section,
 :is(html.high-contrast body, body.high-contrast) article,
 :is(html.high-contrast body, body.high-contrast) nav {
-	background-color: var(--ally-background);
-	color: var(--ally-text);
+  background-color: var(--ally-background);
+  color: var(--ally-text);
 }
 
 :is(html.high-contrast body, body.high-contrast) a,
@@ -135,20 +139,20 @@ html.dark-mode.high-contrast {
 :is(html.high-contrast body, body.high-contrast) input,
 :is(html.high-contrast body, body.high-contrast) textarea,
 :is(html.high-contrast body, body.high-contrast) select {
-	border-color: var(--ally-border);
-	color: var(--ally-text);
+  border-color: var(--ally-border);
+  color: var(--ally-text);
 }
 
 :is(html.high-contrast body, body.high-contrast) a {
-	color: var(--ally-accent);
-	text-decoration: underline;
+  color: var(--ally-accent);
+  text-decoration: underline;
 }
 
 :is(html.high-contrast body, body.high-contrast) button,
 :is(html.high-contrast body, body.high-contrast) input,
 :is(html.high-contrast body, body.high-contrast) textarea,
 :is(html.high-contrast body, body.high-contrast) select {
-	background-color: var(--ally-surface);
+  background-color: var(--ally-surface);
 }
 
 /* =========================================
@@ -156,37 +160,75 @@ html.dark-mode.high-contrast {
 ========================================= */
 
 :is(html.high-contrast body, body.high-contrast) :where(
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	span,
-	strong,
-	em,
-	li,
-	label,
-	legend,
-	dt,
-	dd,
-	figcaption,
-	caption
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  strong,
+  em,
+  li,
+  label,
+  legend,
+  dt,
+  dd,
+  figcaption,
+  caption
 ) {
-	color: var(--ally-text) !important;
+  color: var(--ally-text) !important;
 }
 
 :is(html.high-contrast body, body.high-contrast) a {
-	color: var(--ally-accent) !important;
+  color: var(--ally-accent) !important;
 }
 
 :is(html.high-contrast body, body.high-contrast) button,
 :is(html.high-contrast body, body.high-contrast) input,
 :is(html.high-contrast body, body.high-contrast) textarea,
 :is(html.high-contrast body, body.high-contrast) select {
-	color: var(--ally-text) !important;
+  color: var(--ally-text) !important;
 }
+
+/* ==========================================================================
+   CORRECCION: BUSCADOR Y FILTROS EN ALTO CONTRASTE (FONDO BLANCO)
+   ========================================================================== */
+
+/* Asegura que la tarjeta de controles mantenga fondo blanco y borde definido */
+:is(html.high-contrast body, body.high-contrast) .menu-controls,
+:is(html.high-contrast body, body.high-contrast) .menu-search-wrapper,
+:is(html.high-contrast body, body.high-contrast) .search-container {
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+/* Fuerza a que TODO el texto dentro de la caja de busqueda sea negro puro */
+:is(html.high-contrast body, body.high-contrast) .menu-controls :where(label, span, strong, p, h2, h3),
+:is(html.high-contrast body, body.high-contrast) .search-container :where(label, span, strong, p, h2, h3),
+:is(html.high-contrast body, body.high-contrast) .menu-search-wrapper :where(label, span, strong, p, h2, h3),
+:is(html.high-contrast body, body.high-contrast) .search-box label,
+:is(html.high-contrast body, body.high-contrast) .search-box span {
+  color: #000000 !important;
+}
+
+/* Input de busqueda: fondo negro con texto y borde blanco para contraste */
+:is(html.high-contrast body, body.high-contrast) .menu-controls input,
+:is(html.high-contrast body, body.high-contrast) .search-container input,
+:is(html.high-contrast body, body.high-contrast) .search-box input {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Placeholder visible dentro del buscador */
+:is(html.high-contrast body, body.high-contrast) .menu-controls input::placeholder,
+:is(html.high-contrast body, body.high-contrast) .search-container input::placeholder,
+:is(html.high-contrast body, body.high-contrast) .search-box input::placeholder {
+  color: #cccccc !important;
+}
+
 
 /* =========================================
    COMPATIBILIDAD CON EL MODO OSCURO NORMAL
@@ -194,7 +236,7 @@ html.dark-mode.high-contrast {
 
 html.dark-mode:not(.high-contrast) .about-content .eyebrow,
 html.dark-mode:not(.high-contrast) .section-heading > span {
-	color: #ffcf70 !important;
+  color: #ffcf70 !important;
 }
 
 html.dark-mode:not(.high-contrast) .about-content h2,
@@ -203,16 +245,16 @@ html.dark-mode:not(.high-contrast) .section-heading h2,
 html.dark-mode:not(.high-contrast) .section-heading p,
 html.dark-mode:not(.high-contrast) .service-card h3,
 html.dark-mode:not(.high-contrast) .service-card p {
-	color: #fff8e7 !important;
+  color: #fff8e7 !important;
 }
 
 html.dark-mode:not(.high-contrast) .menu-section .section-heading > span {
-	color: #ffcf70 !important;
+  color: #ffcf70 !important;
 }
 
 html.dark-mode:not(.high-contrast) .menu-section .section-heading h2,
 html.dark-mode:not(.high-contrast) .menu-section .section-heading p {
-	color: #fff8e7 !important;
+  color: #fff8e7 !important;
 }
 
 /* =========================================
@@ -222,39 +264,39 @@ html.dark-mode:not(.high-contrast) .menu-section .section-heading p {
 :is(html.high-contrast body, body.high-contrast) .menu-section .section-heading > span,
 :is(html.high-contrast body, body.high-contrast) .menu-section .section-heading h2,
 :is(html.high-contrast body, body.high-contrast) .menu-section .section-heading p {
-	color: var(--color-text) !important;
+  color: var(--color-text) !important;
 }
 
 /* Tarjetas de servicios */
 
 :is(html.high-contrast body, body.high-contrast) .service-card {
-	background-color: var(--color-surface-elevated);
+  background-color: var(--color-surface-elevated);
 }
 
 :is(html.high-contrast body, body.high-contrast) .service-icon {
-	background-color: #ffffff;
-	color: #000000 !important;
+  background-color: #ffffff;
+  color: #000000 !important;
 }
 
 :is(html.high-contrast body, body.high-contrast) .service-card h3,
 :is(html.high-contrast body, body.high-contrast) .service-card p {
-	color: var(--color-text) !important;
+  color: var(--color-text) !important;
 }
 
 /* Estados de botones y filtros */
 
 :is(html.high-contrast body, body.high-contrast) button:hover,
 :is(html.high-contrast body, body.high-contrast) button:focus-visible {
-	background-color: var(--color-accent) !important;
-	color: #000000 !important;
+  background-color: var(--color-accent) !important;
+  color: #000000 !important;
 }
 
 :is(html.high-contrast body, body.high-contrast) .category-button.active,
 :is(html.high-contrast body, body.high-contrast) .category-button:hover,
 :is(html.high-contrast body, body.high-contrast) .category-button:focus-visible {
-	border: 2px solid var(--color-border) !important;
-	background-color: var(--color-accent) !important;
-	color: #000000 !important;
+  border: 2px solid var(--color-border) !important;
+  background-color: var(--color-accent) !important;
+  color: #000000 !important;
 }
 
 /* Botones de acciones principales */
@@ -265,9 +307,9 @@ html.dark-mode:not(.high-contrast) .menu-section .section-heading p {
 :is(html.high-contrast body, body.high-contrast) .outline-button,
 :is(html.high-contrast body, body.high-contrast) .contact-button,
 :is(html.high-contrast body, body.high-contrast) .menu-link {
-	border-color: var(--color-primary) !important;
-	background-color: var(--color-primary) !important;
-	color: var(--color-on-primary) !important;
+  border-color: var(--color-primary) !important;
+  background-color: var(--color-primary) !important;
+  color: var(--color-on-primary) !important;
 }
 
 :is(html.high-contrast body, body.high-contrast) button:hover,
@@ -277,30 +319,30 @@ html.dark-mode:not(.high-contrast) .menu-section .section-heading p {
 :is(html.high-contrast body, body.high-contrast) .outline-button:hover,
 :is(html.high-contrast body, body.high-contrast) .contact-button:hover,
 :is(html.high-contrast body, body.high-contrast) .menu-link:hover {
-	border-color: var(--color-accent) !important;
-	background-color: var(--color-accent) !important;
-	color: #000000 !important;
+  border-color: var(--color-accent) !important;
+  background-color: var(--color-accent) !important;
+  color: #000000 !important;
 }
 
 /* Tarjetas de platillos: siempre texto negro */
 
 :is(html.high-contrast body, body.high-contrast) .menu-card {
-	background-color: #ffffff !important;
-	color: #000000 !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
 :is(html.high-contrast body, body.high-contrast) .menu-card h3,
 :is(html.high-contrast body, body.high-contrast) .menu-card p,
 :is(html.high-contrast body, body.high-contrast) .menu-card-title span {
-	color: #000000 !important;
+  color: #000000 !important;
 }
 
 .header-actions {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .header-actions .theme-toggle {
-	margin-left: 0;
+  margin-left: 0;
 }

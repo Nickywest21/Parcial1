@@ -1,182 +1,74 @@
 /* =========================================
    TEMA — LA PLACITA
-
-   MODO CLARO:
-   Crema / durazno / naranja / terracota
-   / marrón cálido
-
-   MODO OSCURO:
-   Rojo quemado / naranja / barro / crema
+   Variables semanticas de color (claro/oscuro)
 ========================================= */
 
-
 /* =========================================
-   MODO CLARO
+   MODO CLARO (DEFAULT)
 ========================================= */
 
 :root {
-
-  /* =========================================
-     FONDOS
-  ========================================= */
-
-  /* Crema cálido */
+  /* Fondos */
   --color-bg: #F3DDCA;
-
-  /* Crema claro */
   --color-surface: #FFF2E5;
-
-  /* Durazno / beige */
   --color-surface-elevated: #E2BFA8;
 
-
-  /* =========================================
-     COLORES PRINCIPALES
-  ========================================= */
-
-  /*
-     IMPORTANTE:
-
-     Este NO es el mismo terracota del dark mode.
-
-     En claro es más marrón y profundo,
-     para que el texto crema tenga contraste.
-  */
+  /* Colores Principales */
   --color-primary: #71351F;
-
-  /*
-     Naranja quemado para elementos secundarios
-  */
   --color-secondary: #C45A27;
 
-
-  /* =========================================
-     ACENTOS
-  ========================================= */
-
-  /* Naranja cálido */
-  --color-accent: #e8b990;
-
-  /* Naranja/rojo oscuro para hover */
+  /* Acentos y Estados Hover */
+  --color-accent: #E8B990;
   --color-accent-hover: #9E3F19;
 
-
-  /* =========================================
-     TEXTO
-  ========================================= */
-
-  /* Marrón muy oscuro */
+  /* Tipografia y Textos */
   --color-text: #321A12;
-
-  /* Marrón medio */
   --color-text-secondary: #715345;
 
-
-  /* =========================================
-     BORDES
-  ========================================= */
-
+  /* Bordes y Lineas de Division */
   --color-border: #D1A58D;
 
-
-  /* =========================================
-     TEXTO SOBRE PRIMARY
-  ========================================= */
-
+  /* Texto sobre fondos con color primario */
   --color-on-primary: #FFF2E5;
 
-
-  /* =========================================
-     INK
-     HEADER / FOOTER / TARJETAS
-  ========================================= */
-
-  /*
-     Más naranja que el Hero.
-     Esto crea una diferencia visual
-     entre Header y Hero.
-  */
+  /* Bloques Fijos (Header, Footer, Tarjetas oscuras) */
   --color-ink: #975941fe;
-
   --color-ink-text: #FFF3E8;
-
   --color-ink-text-secondary: #EAC8B5;
-
   --color-ink-border: rgba(255, 243, 232, 0.25);
 }
 
-
 /* =========================================
    MODO OSCURO
-
-   ESTA PARTE SE MANTIENE COMO
-   LA VERSIÓN QUE TE GUSTÓ
 ========================================= */
 
 html.dark-mode {
-
-  /* =========================================
-     FONDOS
-  ========================================= */
-
+  /* Fondos */
   --color-bg: #1C0E09;
-
   --color-surface: #301711;
-
   --color-surface-elevated: #5A2919;
 
-
-  /* =========================================
-     COLORES PRINCIPALES
-  ========================================= */
-
+  /* Colores Principales */
   --color-primary: #8E2F12;
-
   --color-secondary: #C65A25;
 
-
-  /* =========================================
-     ACENTOS
-  ========================================= */
-
-  --color-accent: #bb7737;
-
+  /* Acentos y Estados Hover */
+  --color-accent: #BB7737;
   --color-accent-hover: #F0953B;
 
-
-  /* =========================================
-     TEXTO
-  ========================================= */
-
+  /* Tipografia y Textos */
   --color-text: #FFF0E5;
-
   --color-text-secondary: #D8B6A5;
 
-
-  /* =========================================
-     BORDES
-  ========================================= */
-
+  /* Bordes y Lineas de Division */
   --color-border: #693D2D;
 
-
-  /* =========================================
-     TEXTO SOBRE PRIMARY
-  ========================================= */
-
+  /* Texto sobre fondos con color primario */
   --color-on-primary: #FFF0E5;
 
-
-  /* =========================================
-     INK
-     HEADER / FOOTER / TARJETAS
-  ========================================= */
-
+  /* Bloques Fijos */
   --color-ink: #35130C;
-
   --color-ink-text: #FFF0E5;
-
   --color-ink-text-secondary: #D9B5A3;
-
   --color-ink-border: rgba(255, 240, 229, 0.18);
 }

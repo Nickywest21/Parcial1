@@ -7,6 +7,7 @@ function Header() {
   const [isHighContrast, setIsHighContrast] = useState(
     () => localStorage.getItem("high-contrast") === "true"
   );
+  const [menuAbierto, setMenuAbierto] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark-mode", isDark);
@@ -18,46 +19,93 @@ function Header() {
     localStorage.setItem("high-contrast", isHighContrast ? "true" : "false");
   }, [isHighContrast]);
 
+  const toggleMenu = () => {
+    setMenuAbierto(!menuAbierto);
+  };
+
+  const cerrarMenu = () => {
+    setMenuAbierto(false);
+  };
+
   return (
     <header className="site-header">
       <div className="header-container">
 
-        <a href="#inicio" className="logo" aria-label="La Placita - Inicio">
+        {/* LOGO */}
+        <a
+          href="#inicio"
+          className="logo"
+          aria-label="La Placita - Ir al inicio"
+          onClick={cerrarMenu}
+        >
           <span>La</span>
           <strong>Placita</strong>
         </a>
 
-        <nav className="main-nav" aria-label="Navegación principal">
-          <a href="#inicio">Inicio</a>
-          <a href="#menu">Menú</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#contacto">Contacto</a>
+        {/* NAVEGACION PRINCIPAL (Adaptable a celular con clase active) */}
+        <nav
+          className={menuAbierto ? "main-nav active" : "main-nav"}
+          aria-label="Navegación principal"
+        >
+          <a href="#inicio" onClick={cerrarMenu}>
+            Inicio
+          </a>
+          <a href="#menu" onClick={cerrarMenu}>
+            Menú
+          </a>
+          <a href="#nosotros" onClick={cerrarMenu}>
+            Nosotros
+          </a>
+          <a href="#contacto" onClick={cerrarMenu}>
+            Contacto
+          </a>
         </nav>
 
+        {/* CONTROLES DE MODO OSCURO Y ALTO CONTRASTE */}
         <div className="header-actions">
+          {/* Boton Modo Oscuro */}
           <button
             type="button"
             className="theme-toggle"
-            aria-label="Cambiar tema"
+            aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
             aria-pressed={isDark}
             onClick={() => setIsDark(!isDark)}
           >
             {isDark ? (
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
                 <circle cx="12" cy="12" r="5" />
                 <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
               </svg>
             ) : (
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             )}
           </button>
 
+          {/* Boton Alto Contraste con Icono Accesible */}
           <button
             type="button"
-            className="theme-toggle"
-            aria-label={isHighContrast ? "Desactivar alto contraste" : "Activar alto contraste"}
+            className="theme-toggle accessibility-toggle"
+            aria-label={
+              isHighContrast
+                ? "Desactivar modo de alto contraste"
+                : "Activar modo de alto contraste"
+            }
             aria-pressed={isHighContrast}
             onClick={() => setIsHighContrast(!isHighContrast)}
           >
@@ -78,11 +126,13 @@ function Header() {
           </button>
         </div>
 
+        {/* BOTON HAMBURGUESA PARA CELULARES */}
         <button
           type="button"
-          className="menu-toggle"
-          aria-label="Abrir menú de navegación"
-          aria-expanded="false"
+          className={menuAbierto ? "menu-toggle active" : "menu-toggle"}
+          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú de navegación"}
+          aria-expanded={menuAbierto}
+          onClick={toggleMenu}
         >
           <span></span>
           <span></span>
