@@ -5,32 +5,27 @@ import Menu from "./components/menu";
 import Footer from "./components/footer";
 import ContactForm from "./components/contactForm";
 
-// 1. Tokens y variables base
+// 1. Tokens y variables de color
 import "./styles/theme.css";
 // 2. Estructura general de la aplicacion
 import "./App.css";
 // 3. Modulo independiente del catalogo del menu
 import "./styles/menu.css";
-// 4. Reglas de accesibilidad y alto contraste (debe ir al final para mandar en la cascada)
+// 4. Reglas adaptativas para celulares y tablets 
+import "./styles/responsive.css";
+// 5. Reglas de accesibilidad y alto contraste (siempre al final para mandar en la cascada)
 import "./styles/ally.css";
 
 function App() {
   return (
     <>
-      {/* Encabezado fijo con navegacion y toggles de accesibilidad */}
       <Header />
 
       <main id="contenido-principal">
-        {/* Seccion 1: Hero / Portada */}
         <Hero />
-
-        {/* Seccion 2: Catalogo interactivo del Menu */}
         <Menu />
-
-        {/* Seccion 3: Historia y Valores del Restaurante */}
         <About />
 
-        {/* Seccion 4: Contacto con formulario interactivo */}
         <section
           id="contacto"
           className="contact-preview section"
@@ -49,7 +44,6 @@ function App() {
         </section>
       </main>
 
-      {/* Pie de pagina con horarios, direccion y creditos */}
       <Footer />
     </>
   );
