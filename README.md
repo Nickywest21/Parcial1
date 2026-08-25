@@ -26,7 +26,7 @@ Además, el sitio permite cargar los productos del menú desde un archivo extern
 
 ---
 
-## 📋 Cómo correrlo
+## Cómo correrlo
 
 Para ejecutar el proyecto necesitás tener instalado **Node.js**.
 
@@ -242,7 +242,7 @@ El diseño se adapta a diferentes tamaños de pantalla para evitar que los texto
 
 ---
 
-## 🎨 Diseño visual
+## Diseño visual
 
 El diseño busca transmitir una imagen más seria, agradable y relacionada con la identidad de un restaurante.
 
