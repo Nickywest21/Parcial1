@@ -1,13 +1,74 @@
+/* =========================================
+   TEMA — LA PLACITA
+   Variables semanticas de color (claro/oscuro)
+========================================= */
+
+/* =========================================
+   MODO CLARO (DEFAULT)
+========================================= */
+
 :root {
-  --color-cream: #ffefa4;
-  --color-mustard: #a69b03;
-  --color-olive: #756c07;
-  --color-brown: #4b1709;
-  --color-terracotta: #ab5137;
+  /* Fondos */
+  --color-bg: #F3DDCA;
+  --color-surface: #FFF2E5;
+  --color-surface-elevated: #E2BFA8;
 
-  --color-white: #fffefa;
-  --color-dark: #2d0d05;
+  /* Colores Principales */
+  --color-primary: #71351F;
+  --color-secondary: #C45A27;
 
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-title: Georgia, "Times New Roman", serif;
+  /* Acentos y Estados Hover */
+  --color-accent: #E8B990;
+  --color-accent-hover: #9E3F19;
+
+  /* Tipografia y Textos */
+  --color-text: #321A12;
+  --color-text-secondary: #715345;
+
+  /* Bordes y Lineas de Division */
+  --color-border: #D1A58D;
+
+  /* Texto sobre fondos con color primario */
+  --color-on-primary: #FFF2E5;
+
+  /* Bloques Fijos (Header, Footer, Tarjetas oscuras) */
+  --color-ink: #975941fe;
+  --color-ink-text: #FFF3E8;
+  --color-ink-text-secondary: #EAC8B5;
+  --color-ink-border: rgba(255, 243, 232, 0.25);
+}
+
+/* =========================================
+   MODO OSCURO
+========================================= */
+
+html.dark-mode {
+  /* Fondos */
+  --color-bg: #1C0E09;
+  --color-surface: #301711;
+  --color-surface-elevated: #5A2919;
+
+  /* Colores Principales */
+  --color-primary: #8E2F12;
+  --color-secondary: #C65A25;
+
+  /* Acentos y Estados Hover */
+  --color-accent: #BB7737;
+  --color-accent-hover: #F0953B;
+
+  /* Tipografia y Textos */
+  --color-text: #FFF0E5;
+  --color-text-secondary: #D8B6A5;
+
+  /* Bordes y Lineas de Division */
+  --color-border: #693D2D;
+
+  /* Texto sobre fondos con color primario */
+  --color-on-primary: #FFF0E5;
+
+  /* Bloques Fijos */
+  --color-ink: #35130C;
+  --color-ink-text: #FFF0E5;
+  --color-ink-text-secondary: #D9B5A3;
+  --color-ink-border: rgba(255, 240, 229, 0.18);
 }
