@@ -11,7 +11,7 @@ Muchas gracias por confiar en nosotros para mejorar la página de La Placita. Es
 
 1. Una página que funcione bien en el celular
 
-Nos pidió que la página dejara de verse mal en los teléfonos. Para solucionarlo, acomodamos todos los elementos para que se adapten al tamaño de cada pantalla. Ahora los textos no se salen de sus borde, las imágenes se ven correctamente y los botones tienen un tamaño cómodo para tocarlos. Lo hicimos así porque sabemos que muchos de sus clientes entrarán a la página desde su celular. Queremos que puedan consultar el menú y comunicarse con usted sin tener que hacer zoom o mover la pantalla de un lado a otro.
+Nos pidió que la página dejara de verse mal en los teléfonos. Para solucionarlo, acomodamos todos los elementos para que se adapten al tamaño de cada pantalla. Ahora los textos no se salen de sus bordes, las imágenes se ven correctamente y los botones tienen un tamaño cómodo para tocarlos. Lo hicimos así porque sabemos que muchos de sus clientes entrarán a la página desde su celular. Queremos que puedan consultar el menú y comunicarse con usted sin tener que hacer zoom o mover la pantalla de un lado a otro.
 
 2. Una página que todos puedan utilizar
 
@@ -27,7 +27,7 @@ Nos pidió que los clientes pudieran ver solamente lo que les interesa. Para eso
 
 5. Evitar que la página parezca dañada
 
-También nos preocupaba que, si la información tarda en aparecer o existe algún problema, el visitante pensara que la página no funciona. Por eso, ahora la página avisa cuando está cargando la información y, si ocurre algún problema, muestra un mensaje explicando qué pasó y permite volver a intentarlo. De esta forma, el visitante siempre sabe qué está sucediendo y no se queda frente a una pantalla vacía.
+También nos preocupaba que, si la información tarda en aparecer o existe algún problema, el visitante pensara que la página no funciona. Por eso, ahora la página avisa cuando está cargando la información y, si ocurre algún problema, muestra un mensaje explicando qué pasó y permite volver a intentarlo. Además, si una imagen no se carga correctamente, la página lo detecta y muestra un mensaje amigable con el sello de La Placita. De esta forma, el visitante siempre sabe qué está sucediendo y no se queda frente a una pantalla vacía.
 
 6. Un espacio para comunicarse con usted
 
