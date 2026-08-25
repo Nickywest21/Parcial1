@@ -12,6 +12,8 @@ function ContactForm() {
 
   const [errores, setErrores] = useState({});
   const [enviado, setEnviado] = useState(false);
+  const [enviando, setEnviando] = useState(false);
+  const [errorEnvio, setErrorEnvio] = useState("");
 
   const manejarCambio = (e) => {
     const { name, value } = e.target;
@@ -27,6 +29,7 @@ function ContactForm() {
     });
 
     setEnviado(false);
+    setErrorEnvio("");
   };
 
   const validarFormulario = () => {
@@ -39,13 +42,13 @@ function ContactForm() {
     if (!formulario.correo.trim()) {
       nuevosErrores.correo = "El correo electrónico es obligatorio.";
     } else if (
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formulario.correo)
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formulario.correo.trim())
     ) {
       nuevosErrores.correo = "Ingresa un correo electrónico válido.";
     }
 
     if (!formulario.mensaje.trim()) {
-    nuevosErrores.mensaje = "El mensaje es obligatorio.";
+      nuevosErrores.mensaje = "El mensaje es obligatorio.";
     } else if (formulario.mensaje.trim().length < 15) {
       nuevosErrores.mensaje =
         "El mensaje debe tener al menos 15 caracteres.";
@@ -54,52 +57,55 @@ function ContactForm() {
     return nuevosErrores;
   };
 
-const manejarEnvio = (e) => {
-  e.preventDefault();
+  const manejarEnvio = (e) => {
+    e.preventDefault();
 
-  const nuevosErrores = validarFormulario();
+    const nuevosErrores = validarFormulario();
 
-  if (Object.keys(nuevosErrores).length > 0) {
-    setErrores(nuevosErrores);
-    return;
-  }
+    if (Object.keys(nuevosErrores).length > 0) {
+      setErrores(nuevosErrores);
+      return;
+    }
 
-  setErrores({});
+    setErrores({});
+    setErrorEnvio("");
+    setEnviando(true);
 
-  emailjs
-    .send(
-      "service_t7k24nd",
-      "template_wl4joxa",
-      {
-        nombre: formulario.nombre,
-        correo: formulario.correo,
-        mensaje: formulario.mensaje,
-      },
-      {
-        publicKey: "rPUgtQGDK4XtF1etV",
-      }
-    )
-    .then(
-      () => {
-        console.log("Correo enviado correctamente");
-
-        setEnviado(true);
-
-        setFormulario({
-          nombre: "",
-          correo: "",
-          mensaje: "",
-        });
-      },
-      (error) => {
-        console.error("Error al enviar el correo:", error);
-      }
-    );
-};
+    emailjs
+      .send(
+        "service_t7k24nd",
+        "template_wl4joxa",
+        {
+          nombre: formulario.nombre.trim(),
+          correo: formulario.correo.trim(),
+          mensaje: formulario.mensaje.trim(),
+        },
+        {
+          publicKey: "rPUgtQGDK4XtF1etV",
+        }
+      )
+      .then(
+        () => {
+          setEnviado(true);
+          setEnviando(false);
+          setFormulario({
+            nombre: "",
+            correo: "",
+            mensaje: "",
+          });
+        },
+        (error) => {
+          console.error("Fallo de red al enviar el correo:", error);
+          setErrorEnvio(
+            "No hay conexión a internet o el servicio no está disponible. Revisa tu red e intenta de nuevo."
+          );
+          setEnviando(false);
+        }
+      );
+  };
 
   return (
     <div className="contact-form-wrapper">
-
       {!mostrarFormulario ? (
         <button
           type="button"
@@ -109,25 +115,22 @@ const manejarEnvio = (e) => {
           Contáctanos
         </button>
       ) : (
-        <div className="contact-form-card">
-
+        <div
+          className="contact-form-card"
+          role="region"
+          aria-labelledby="form-titulo"
+        >
           <div className="contact-form-header">
             <span>CONTÁCTANOS</span>
-
-            <h2>Escríbenos</h2>
-
+            <h2 id="form-titulo">Escríbenos</h2>
             <p>
               Déjanos tus datos y cuéntanos cómo podemos ayudarte.
             </p>
           </div>
 
           <form onSubmit={manejarEnvio} noValidate>
-
             <div className="form-group">
-              <label htmlFor="nombre">
-                Nombre
-              </label>
-
+              <label htmlFor="nombre">Nombre</label>
               <input
                 type="text"
                 id="nombre"
@@ -136,12 +139,12 @@ const manejarEnvio = (e) => {
                 onChange={manejarCambio}
                 placeholder="Escribe tu nombre"
                 required
+                disabled={enviando}
                 aria-invalid={!!errores.nombre}
                 aria-describedby={
                   errores.nombre ? "error-nombre" : undefined
                 }
               />
-
               {errores.nombre && (
                 <span
                   id="error-nombre"
@@ -154,10 +157,7 @@ const manejarEnvio = (e) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="correo">
-                Correo electrónico
-              </label>
-
+              <label htmlFor="correo">Correo electrónico</label>
               <input
                 type="email"
                 id="correo"
@@ -166,12 +166,12 @@ const manejarEnvio = (e) => {
                 onChange={manejarCambio}
                 placeholder="ejemplo@correo.com"
                 required
+                disabled={enviando}
                 aria-invalid={!!errores.correo}
                 aria-describedby={
                   errores.correo ? "error-correo" : undefined
                 }
               />
-
               {errores.correo && (
                 <span
                   id="error-correo"
@@ -184,10 +184,7 @@ const manejarEnvio = (e) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="mensaje">
-                Mensaje
-              </label>
-
+              <label htmlFor="mensaje">Mensaje</label>
               <textarea
                 id="mensaje"
                 name="mensaje"
@@ -196,13 +193,13 @@ const manejarEnvio = (e) => {
                 placeholder="Escribe tu pregunta o solicitud..."
                 rows="5"
                 required
+                disabled={enviando}
                 minLength={15}
                 aria-invalid={!!errores.mensaje}
                 aria-describedby={
                   errores.mensaje ? "error-mensaje" : undefined
                 }
               />
-
               {errores.mensaje && (
                 <span
                   id="error-mensaje"
@@ -215,37 +212,39 @@ const manejarEnvio = (e) => {
             </div>
 
             <div className="form-actions">
-
               <button
                 type="submit"
                 className="submit-button"
+                disabled={enviando}
               >
-                Enviar mensaje
+                {enviando ? "Enviando..." : "Enviar mensaje"}
               </button>
 
               <button
                 type="button"
                 className="close-button"
+                disabled={enviando}
                 onClick={() => setMostrarFormulario(false)}
               >
                 Cerrar
               </button>
-
             </div>
 
             {enviado && (
-              <p
-                className="form-success"
-                role="status"
-              >
-                ✓ ¡Mensaje enviado correctamente!
+              <p className="form-success" role="status">
+                ✓ ¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.
               </p>
             )}
 
+            {errorEnvio && (
+              <div className="form-alert-error" role="alert">
+                <span>✕</span>
+                <span>{errorEnvio}</span>
+              </div>
+            )}
           </form>
         </div>
       )}
-
     </div>
   );
 }
