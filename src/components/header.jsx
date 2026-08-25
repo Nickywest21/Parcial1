@@ -1,33 +1,29 @@
 import { useState, useEffect } from "react";
 
 function Header() {
-  // Estado para el Modo Oscuro (lee preferencia guardada en localStorage)
   const [isDark, setIsDark] = useState(
     () => localStorage.getItem("theme") === "dark"
   );
-
-  // Estado para el Modo Alto Contraste
   const [isHighContrast, setIsHighContrast] = useState(
     () => localStorage.getItem("high-contrast") === "true"
   );
-
-  // Estado para controlar la apertura del menu hamburguesa en celulares
   const [menuAbierto, setMenuAbierto] = useState(false);
 
-  // Sincroniza la clase dark-mode en la etiqueta <html>
   useEffect(() => {
     document.documentElement.classList.toggle("dark-mode", isDark);
     localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
 
-  // Sincroniza la clase high-contrast en la etiqueta <html>
   useEffect(() => {
     document.documentElement.classList.toggle("high-contrast", isHighContrast);
     localStorage.setItem("high-contrast", isHighContrast ? "true" : "false");
   }, [isHighContrast]);
 
-  // Cierra el menu movil al hacer clic en un enlace de navegacion
-  const cerrarMenuMovil = () => {
+  const toggleMenu = () => {
+    setMenuAbierto(!menuAbierto);
+  };
+
+  const cerrarMenu = () => {
     setMenuAbierto(false);
   };
 
@@ -35,33 +31,39 @@ function Header() {
     <header className="site-header">
       <div className="header-container">
 
-        {/* Logotipo del Restaurante */}
+        {/* LOGO */}
         <a
           href="#inicio"
           className="logo"
           aria-label="La Placita - Ir al inicio"
-          onClick={cerrarMenuMovil}
+          onClick={cerrarMenu}
         >
           <span>La</span>
           <strong>Placita</strong>
         </a>
 
-        {/* Navegacion Principal (se adapta con la clase active en moviles) */}
+        {/* NAVEGACION PRINCIPAL (Adaptable a celular con clase active) */}
         <nav
-          id="navegacion-principal"
-          className={`main-nav ${menuAbierto ? "active" : ""}`}
+          className={menuAbierto ? "main-nav active" : "main-nav"}
           aria-label="Navegación principal"
         >
-          <a href="#inicio" onClick={cerrarMenuMovil}>Inicio</a>
-          <a href="#menu" onClick={cerrarMenuMovil}>Menú</a>
-          <a href="#nosotros" onClick={cerrarMenuMovil}>Nosotros</a>
-          <a href="#contacto" onClick={cerrarMenuMovil}>Contacto</a>
+          <a href="#inicio" onClick={cerrarMenu}>
+            Inicio
+          </a>
+          <a href="#menu" onClick={cerrarMenu}>
+            Menú
+          </a>
+          <a href="#nosotros" onClick={cerrarMenu}>
+            Nosotros
+          </a>
+          <a href="#contacto" onClick={cerrarMenu}>
+            Contacto
+          </a>
         </nav>
 
-        {/* Controles de Accesibilidad y Tema */}
+        {/* CONTROLES DE MODO OSCURO Y ALTO CONTRASTE */}
         <div className="header-actions">
-          
-          {/* Boton Alternador de Modo Claro / Oscuro */}
+          {/* Boton Modo Oscuro */}
           <button
             type="button"
             className="theme-toggle"
@@ -95,11 +97,15 @@ function Header() {
             )}
           </button>
 
-          {/* Boton Alternador de Alto Contraste */}
+          {/* Boton Alto Contraste con Icono Accesible */}
           <button
             type="button"
-            className="theme-toggle"
-            aria-label={isHighContrast ? "Desactivar modo de alto contraste" : "Activar modo de alto contraste"}
+            className="theme-toggle accessibility-toggle"
+            aria-label={
+              isHighContrast
+                ? "Desactivar modo de alto contraste"
+                : "Activar modo de alto contraste"
+            }
             aria-pressed={isHighContrast}
             onClick={() => setIsHighContrast(!isHighContrast)}
           >
@@ -118,22 +124,20 @@ function Header() {
               <path d="M9 9h6M12 7v10M8 21l4-4 4 4M9 12l-3 3M15 12l3 3" />
             </svg>
           </button>
-
-          {/* Boton Menu Hamburguesa para Dispositivos Moviles */}
-          <button
-            type="button"
-            className={`menu-toggle ${menuAbierto ? "open" : ""}`}
-            aria-label={menuAbierto ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
-            aria-expanded={menuAbierto}
-            aria-controls="navegacion-principal"
-            onClick={() => setMenuAbierto(!menuAbierto)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
         </div>
+
+        {/* BOTON HAMBURGUESA PARA CELULARES */}
+        <button
+          type="button"
+          className={menuAbierto ? "menu-toggle active" : "menu-toggle"}
+          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú de navegación"}
+          aria-expanded={menuAbierto}
+          onClick={toggleMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
       </div>
     </header>
