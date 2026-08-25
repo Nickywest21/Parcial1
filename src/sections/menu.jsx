@@ -77,10 +77,10 @@ function Menu() {
     };
   }, [intentoCarga]);
 
-  // 2. Reiniciar la cantidad visible al cambiar categoria o texto de busqueda
-  useEffect(() => {
-    setCantidadVisible(CANTIDAD_INICIAL);
-  }, [categoriaActiva, busqueda]);
+// 2. Reiniciar la cantidad visible al cambiar categoria o texto de busqueda
+useEffect(() => {
+  setCantidadVisible(CANTIDAD_INICIAL);
+}, [categoriaActiva, busqueda]);
 
   // 3. Logica de filtrado combinado (Categoria + Busqueda)
   const textoBuscado = normalizarTexto(busqueda);

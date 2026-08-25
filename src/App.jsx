@@ -1,8 +1,8 @@
-import Header from "./components/header";
-import Hero from "./components/hero";
-import About from "./components/about";
+import Header from "./sections/header";
+import Hero from "./sections/hero";
+import About from "./sections/about";
 import Menu from "./sections/menu";
-import Footer from "./components/footer";
+import Footer from "./sections/footer";
 import ContactForm from "./components/contactForm";
 
 // 1. Tokens y variables de color
