@@ -1,7 +1,7 @@
 import Header from "./components/header";
 import Hero from "./components/hero";
 import About from "./components/about";
-import Menu from "./components/menu";
+import Menu from "./sections/menu";
 import Footer from "./components/footer";
 import ContactForm from "./components/contactForm";
 

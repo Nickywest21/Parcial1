@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import CategoryFilter from "./categoryFilter";
-import MenuCard from "./menuCard";
+import CategoryFilter from "../components/categoryFilter";
+import MenuCard from "../components/menuCard";
 
 // Categorias disponibles para la navegacion del menu
 const categorias = [
