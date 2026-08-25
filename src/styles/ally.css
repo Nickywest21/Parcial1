@@ -192,6 +192,44 @@ html.dark-mode.high-contrast {
   color: var(--ally-text) !important;
 }
 
+/* ==========================================================================
+   CORRECCION: BUSCADOR Y FILTROS EN ALTO CONTRASTE (FONDO BLANCO)
+   ========================================================================== */
+
+/* Asegura que la tarjeta de controles mantenga fondo blanco y borde definido */
+:is(html.high-contrast body, body.high-contrast) .menu-controls,
+:is(html.high-contrast body, body.high-contrast) .menu-search-wrapper,
+:is(html.high-contrast body, body.high-contrast) .search-container {
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+/* Fuerza a que TODO el texto dentro de la caja de busqueda sea negro puro */
+:is(html.high-contrast body, body.high-contrast) .menu-controls :where(label, span, strong, p, h2, h3),
+:is(html.high-contrast body, body.high-contrast) .search-container :where(label, span, strong, p, h2, h3),
+:is(html.high-contrast body, body.high-contrast) .menu-search-wrapper :where(label, span, strong, p, h2, h3),
+:is(html.high-contrast body, body.high-contrast) .search-box label,
+:is(html.high-contrast body, body.high-contrast) .search-box span {
+  color: #000000 !important;
+}
+
+/* Input de busqueda: fondo negro con texto y borde blanco para contraste */
+:is(html.high-contrast body, body.high-contrast) .menu-controls input,
+:is(html.high-contrast body, body.high-contrast) .search-container input,
+:is(html.high-contrast body, body.high-contrast) .search-box input {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Placeholder visible dentro del buscador */
+:is(html.high-contrast body, body.high-contrast) .menu-controls input::placeholder,
+:is(html.high-contrast body, body.high-contrast) .search-container input::placeholder,
+:is(html.high-contrast body, body.high-contrast) .search-box input::placeholder {
+  color: #cccccc !important;
+}
+
+
 /* =========================================
    COMPATIBILIDAD CON EL MODO OSCURO NORMAL
 ========================================= */
