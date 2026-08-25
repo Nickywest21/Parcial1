@@ -1,182 +1,291 @@
 /* =========================================
    TEMA — LA PLACITA
-
-   MODO CLARO:
-   Crema / durazno / naranja / terracota
-   / marrón cálido
-
-   MODO OSCURO:
-   Rojo quemado / naranja / barro / crema
+   Variables semánticas de color (claro/oscuro)
 ========================================= */
-
-
-/* =========================================
-   MODO CLARO
-========================================= */
-
+ 
 :root {
-
-  /* =========================================
-     FONDOS
-  ========================================= */
-
-  /* Crema cálido */
-  --color-bg: #F3DDCA;
-
-  /* Crema claro */
-  --color-surface: #FFF2E5;
-
-  /* Durazno / beige */
-  --color-surface-elevated: #E2BFA8;
-
-
-  /* =========================================
-     COLORES PRINCIPALES
-  ========================================= */
-
-  /*
-     IMPORTANTE:
-
-     Este NO es el mismo terracota del dark mode.
-
-     En claro es más marrón y profundo,
-     para que el texto crema tenga contraste.
-  */
-  --color-primary: #71351F;
-
-  /*
-     Naranja quemado para elementos secundarios
-  */
-  --color-secondary: #C45A27;
-
-
-  /* =========================================
-     ACENTOS
-  ========================================= */
-
-  /* Naranja cálido */
-  --color-accent: #e8b990;
-
-  /* Naranja/rojo oscuro para hover */
-  --color-accent-hover: #9E3F19;
-
-
-  /* =========================================
-     TEXTO
-  ========================================= */
-
-  /* Marrón muy oscuro */
-  --color-text: #321A12;
-
-  /* Marrón medio */
-  --color-text-secondary: #715345;
-
-
-  /* =========================================
-     BORDES
-  ========================================= */
-
-  --color-border: #D1A58D;
-
-
-  /* =========================================
-     TEXTO SOBRE PRIMARY
-  ========================================= */
-
-  --color-on-primary: #FFF2E5;
-
-
-  /* =========================================
-     INK
-     HEADER / FOOTER / TARJETAS
-  ========================================= */
-
-  /*
-     Más naranja que el Hero.
-     Esto crea una diferencia visual
-     entre Header y Hero.
-  */
-  --color-ink: #975941fe;
-
-  --color-ink-text: #FFF3E8;
-
-  --color-ink-text-secondary: #EAC8B5;
-
-  --color-ink-border: rgba(255, 243, 232, 0.25);
+  /* --- Modo claro (default) --- */
+  --color-bg: #F3EFE5;              /* Warm Ivory */
+  --color-surface: #FFFDF7;         /* Soft Cream */
+  --color-surface-elevated: #CCBA92; /* Greige, más saturado */
+  --color-primary: #1A200C;         /* Dark Olive, más oscuro para separarse del header/footer */
+  --color-secondary: #668847;       /* Sage, más vivo */
+  --color-accent: #9A561E;          /* Warm Brown, más vivo */
+  --color-accent-hover: #712D0B;    /* Chestnut, más vivo */
+  --color-text: #25271D;            /* Near-black Olive */
+  --color-text-secondary: #69675D;  /* Earthy Gray */
+  --color-border: #E2D6BA;          /* Soft Greige, más cálido */
+ 
+  /* Texto legible sobre fondos con --color-primary.
+     --color-primary se invierte entre modos (oscuro <-> claro),
+     así que este también se invierte para mantener el contraste. */
+  --color-on-primary: var(--color-surface);
+ 
+  /* --- "Ink": banda fija (header, footer, tarjetas) ---
+     No cambia entre modo claro/oscuro; en modo oscuro coincide
+     con el color explícito de "Navbar" de la paleta. */
+  --color-ink: #2F3815;                         /* Dark Olive, más vivo */
+  --color-ink-text: #F2EBDD;                    /* Warm Ivory */
+  --color-ink-text-secondary: #BDB8A9;          /* Muted Beige */
+  --color-ink-border: rgba(175, 96, 36, 0.32);  /* Warm Brown, sutil */
+}
+ 
+html.dark-mode {
+  --color-bg: #10150F;              /* Almost Black Green */
+  --color-surface: #1B2418;         /* Deep Forest */
+  --color-surface-elevated: #243A17; /* Forest Green, más vivo */
+  --color-primary: #241a18;         
+  --color-secondary: #608B46;       /* Muted Green, más vivo */
+  --color-accent: #AF6024;          /* Warm Brown, más vivo */
+  --color-accent-hover: #CA712A;    /* Chestnut, más vivo */
+  --color-text: #F2EBDD;            /* Warm Ivory */
+  --color-text-secondary: #BDB8A9;  /* Muted Beige */
+  --color-border: #345228;          /* Green Gray, más vivo */
+ 
+  --color-on-primary: var(--color-text);
+ 
+  /* Coincide con el "Navbar" explícito de tu paleta oscura */
+  --color-ink: #1E3114;
+  /* --color-ink-text / --color-ink-text-secondary / --color-ink-border
+     se mantienen igual: el header/footer ya viven en modo oscuro
+     permanente, por lo que no necesitan cambiar. */
 }
 
+/* =========================================
+   SECCIÓN Y ENCABEZADOS DEL MENÚ
+========================================= */
+.menu-section {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 3rem 1.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 2rem auto;
+}
+
+.menu-subtitulo {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.menu-titulo-principal {
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.menu-descripcion-encabezado {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+}
 
 /* =========================================
-   MODO OSCURO
-
-   ESTA PARTE SE MANTIENE COMO
-   LA VERSIÓN QUE TE GUSTÓ
+   BOTONES DE FILTRO POR CATEGORÍA
 ========================================= */
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
 
-html.dark-mode {
+.category-button {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
 
-  /* =========================================
-     FONDOS
-  ========================================= */
+.category-button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-1px);
+}
 
-  --color-bg: #1C0E09;
+.category-button.active {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(154, 86, 30, 0.25);
+}
 
-  --color-surface: #301711;
+.category-button:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
 
-  --color-surface-elevated: #5A2919;
+/* =========================================
+   GRILLA Y TARJETAS DE PLATILLOS
+========================================= */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.menu-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.3s ease;
+}
 
-  /* =========================================
-     COLORES PRINCIPALES
-  ========================================= */
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
 
-  --color-primary: #8E2F12;
+.menu-card-img-wrapper {
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-surface-elevated);
+  overflow: hidden;
+}
 
-  --color-secondary: #C65A25;
+.menu-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
 
+.menu-card:hover .menu-card-img {
+  transform: scale(1.03);
+}
 
-  /* =========================================
-     ACENTOS
-  ========================================= */
+.menu-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
-  --color-accent: #bb7737;
+.menu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
 
-  --color-accent-hover: #F0953B;
+.menu-card-nombre {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.3;
+}
 
+.menu-card-precio {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
 
-  /* =========================================
-     TEXTO
-  ========================================= */
+.menu-card-desc {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
 
-  --color-text: #FFF0E5;
+/* =========================================
+   SKELETON LOADING & ESTADOS DE ERROR
+========================================= */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
 
-  --color-text-secondary: #D8B6A5;
+.skeleton-card {
+  pointer-events: none;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
 
+.skeleton-img {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-elevated) 25%,
+    var(--color-surface) 50%,
+    var(--color-surface-elevated) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
 
-  /* =========================================
-     BORDES
-  ========================================= */
+.skeleton-line {
+  height: 14px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-elevated) 25%,
+    var(--color-surface) 50%,
+    var(--color-surface-elevated) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
 
-  --color-border: #693D2D;
+.skeleton-title {
+  width: 60%;
+  height: 22px;
+  margin-bottom: 14px;
+}
 
+.skeleton-text {
+  width: 95%;
+}
 
-  /* =========================================
-     TEXTO SOBRE PRIMARY
-  ========================================= */
+.skeleton-text.short {
+  width: 50%;
+}
 
-  --color-on-primary: #FFF0E5;
+.menu-status-error {
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-text);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto;
+}
 
-
-  /* =========================================
-     INK
-     HEADER / FOOTER / TARJETAS
-  ========================================= */
-
-  --color-ink: #35130C;
-
-  --color-ink-text: #FFF0E5;
-
-  --color-ink-text-secondary: #D9B5A3;
-
-  --color-ink-border: rgba(255, 240, 229, 0.18);
+.menu-vacio {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  grid-column: 1 / -1;
+  padding: 2rem 0;
 }
