@@ -42,7 +42,7 @@ function Menu() {
       setError("");
 
       try {
-        const respuesta = await fetch("/menu.json", {
+        const respuesta = await fetch("/api/menu", {
           signal: controlador.signal
         });
 
