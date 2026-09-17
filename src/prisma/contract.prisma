@@ -1,0 +1,44 @@
+// use prisma-next
+// Contract inferred from the live database schema. Edit as needed, then run `prisma contract emit`.
+
+namespace public {
+  model Categorias {
+    id     String @id(map: "categorias_pkey")
+    nombre String
+    orden  Int    @default(0)
+    menus  Menu[]
+
+    @@rls
+    @@map("categorias")
+  }
+
+  model Menu {
+    id          String         @id(map: "menu_pkey")
+    nombre      String
+    precio      Numeric(10, 2)
+    descripcion String?
+    foto        String?
+    alt         String?
+    createdAt   Timestamptz    @default(dbgenerated("timezone('utc'::text, now())")) @map("created_at")
+    categoriaId String         @map("categoria_id")
+    categoria   Categorias     @relation(fields: [categoriaId], references: [id], onDelete: Restrict, onUpdate: Cascade, map: "menu_categoria_id_fkey")
+
+    @@index([categoriaId], map: "menu_categoria_id_idx")
+    @@rls
+    @@map("menu")
+  }
+
+  policy_select Lectura_pública_de_categorías {
+    target = Categorias
+    roles = [anon, authenticated]
+    using = "true"
+    @@map("Lectura pública de categorías")
+  }
+
+  policy_select Lectura_pública_del_menú {
+    target = Menu
+    roles = [anon, authenticated]
+    using = "true"
+    @@map("Lectura pública del menú")
+  }
+}
