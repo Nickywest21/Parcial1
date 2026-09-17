@@ -41,6 +41,7 @@ function Menu() {
       setCargando(true);
       setError("");
 
+      //realiza la peticion al endpoint del servidor
       try {
         const respuesta = await fetch("/api/menu", {
           signal: controlador.signal
@@ -77,12 +78,17 @@ function Menu() {
     };
   }, [intentoCarga]);
 
-// 2. Reiniciar la cantidad visible al cambiar categoria o texto de busqueda
-useEffect(() => {
-  setCantidadVisible(CANTIDAD_INICIAL);
-}, [categoriaActiva, busqueda]);
+  function cambiarBusqueda(evento) {
+    setBusqueda(evento.target.value);
+    setCantidadVisible(CANTIDAD_INICIAL);
+  }
 
-  // 3. Logica de filtrado combinado (Categoria + Busqueda)
+  function cambiarCategoria(categoria) {
+    setCategoriaActiva(categoria);
+    setCantidadVisible(CANTIDAD_INICIAL);
+  }
+
+  // 2. Logica de filtrado combinado (Categoria + Busqueda)
   const textoBuscado = normalizarTexto(busqueda);
 
   const platillosFiltrados = platillos.filter((platillo) => {
@@ -131,7 +137,7 @@ useEffect(() => {
             id="buscar-platillo"
             type="search"
             value={busqueda}
-            onChange={(evento) => setBusqueda(evento.target.value)}
+            onChange={cambiarBusqueda}
             placeholder="Busca por nombre o ingrediente..."
             autoComplete="off"
           />
@@ -140,7 +146,7 @@ useEffect(() => {
         <CategoryFilter
           categorias={categorias}
           categoriaActiva={categoriaActiva}
-          alCambiarCategoria={setCategoriaActiva}
+          alCambiarCategoria={cambiarCategoria}
         />
 
         {!cargando && !error && (
