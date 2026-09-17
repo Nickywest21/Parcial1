@@ -6,17 +6,24 @@ const PORT = 3000;
 
 app.get("/api/menu", async (req, res) => {
   try {
-    const menu = await db.orm.public.Menu.all();
+const menu = await db.orm.public.Menu
+  .select("id", "nombre", "precio", "descripcion", "foto", "alt", "categoriaId")
+  .include("categoria", (c) => c.select("id", "nombre", "orden"))
+  .all();
 
-    const menuFormateado = menu.map((platillo) => ({
-      id: platillo.id,
-      nombre: platillo.nombre,
-      categoria: platillo.categoria,
-      precio: Number(platillo.precio),
-      descripcion: platillo.descripcion,
-      foto: platillo.foto,
-      alt: platillo.alt
-    }));
+    const menuFormateado = menu
+      .map((platillo) => ({
+        id: platillo.id,
+        nombre: platillo.nombre,
+        categoria: platillo.categoria.id,
+        precio: Number(platillo.precio),
+        descripcion: platillo.descripcion,
+        foto: platillo.foto,
+        alt: platillo.alt,
+        orden: platillo.categoria.orden
+      }))
+      .sort((a, b) => a.orden - b.orden || a.nombre.localeCompare(b.nombre))
+      .map(({ orden, ...platillo }) => platillo);
 
     res.json(menuFormateado);
   } catch (error) {

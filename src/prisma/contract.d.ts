@@ -34,7 +34,7 @@ import type {
 } from '@prisma/orm-postgres/contract/types';
 
 export type StorageHash =
-  StorageHashBase<'83f2142511fa7136dc1928e0ffd67862c9a58c40832acb275c0c2823a4ca0af2'>;
+  StorageHashBase<'33d04ce2db8419f61e3ec8762f45cf0ce8511f60784f8fde47bd8340d577a5f8'>;
 export type ExecutionHash = ExecutionHashBase<string>;
 export type ProfileHash =
   ProfileHashBase<'3916f444a8a17ad749191acf9e08dad97d1a327b88c2f1d45d12f240296aa8b2'>;
@@ -241,37 +241,52 @@ type DefaultLiteralValue<CodecId extends string, Encoded> = CodecId extends keyo
 
 export type FieldOutputTypes = {
   readonly public: {
+    readonly Categorias: {
+      readonly id: CodecTypes['pg/text@1']['output'];
+      readonly nombre: CodecTypes['pg/text@1']['output'];
+      readonly orden: CodecTypes['pg/int4@1']['output'];
+    };
     readonly Menu: {
       readonly id: CodecTypes['pg/text@1']['output'];
       readonly nombre: CodecTypes['pg/text@1']['output'];
-      readonly categoria: CodecTypes['pg/text@1']['output'];
       readonly precio: Numeric<10, 2>;
       readonly descripcion: CodecTypes['pg/text@1']['output'] | null;
       readonly foto: CodecTypes['pg/text@1']['output'] | null;
       readonly alt: CodecTypes['pg/text@1']['output'] | null;
       readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly categoriaId: CodecTypes['pg/text@1']['output'];
     };
   };
 };
 export type FieldInputTypes = {
   readonly public: {
+    readonly Categorias: {
+      readonly id: CodecTypes['pg/text@1']['input'];
+      readonly nombre: CodecTypes['pg/text@1']['input'];
+      readonly orden: CodecTypes['pg/int4@1']['input'];
+    };
     readonly Menu: {
       readonly id: CodecTypes['pg/text@1']['input'];
       readonly nombre: CodecTypes['pg/text@1']['input'];
-      readonly categoria: CodecTypes['pg/text@1']['input'];
       readonly precio: CodecTypes['pg/numeric@1']['input'];
       readonly descripcion: CodecTypes['pg/text@1']['input'] | null;
       readonly foto: CodecTypes['pg/text@1']['input'] | null;
       readonly alt: CodecTypes['pg/text@1']['input'] | null;
       readonly createdAt: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly categoriaId: CodecTypes['pg/text@1']['input'];
     };
   };
 };
 export type StorageColumnTypes = {
   readonly public: {
+    readonly categorias: {
+      readonly id: CodecTypes['pg/text@1']['output'];
+      readonly nombre: CodecTypes['pg/text@1']['output'];
+      readonly orden: CodecTypes['pg/int4@1']['output'];
+    };
     readonly menu: {
       readonly alt: CodecTypes['pg/text@1']['output'] | null;
-      readonly categoria: CodecTypes['pg/text@1']['output'];
+      readonly categoria_id: CodecTypes['pg/text@1']['output'];
       readonly created_at: CodecTypes['pg/timestamptz-temporal@1']['output'];
       readonly descripcion: CodecTypes['pg/text@1']['output'] | null;
       readonly foto: CodecTypes['pg/text@1']['output'] | null;
@@ -283,9 +298,14 @@ export type StorageColumnTypes = {
 };
 export type StorageColumnInputTypes = {
   readonly public: {
+    readonly categorias: {
+      readonly id: CodecTypes['pg/text@1']['input'];
+      readonly nombre: CodecTypes['pg/text@1']['input'];
+      readonly orden: CodecTypes['pg/int4@1']['input'];
+    };
     readonly menu: {
       readonly alt: CodecTypes['pg/text@1']['input'] | null;
-      readonly categoria: CodecTypes['pg/text@1']['input'];
+      readonly categoria_id: CodecTypes['pg/text@1']['input'];
       readonly created_at: CodecTypes['pg/timestamptz-temporal@1']['input'];
       readonly descripcion: CodecTypes['pg/text@1']['input'] | null;
       readonly foto: CodecTypes['pg/text@1']['input'] | null;
@@ -313,7 +333,7 @@ type ContractBase = Omit<
         readonly kind: 'postgres-schema';
         readonly entries: {
           readonly table: {
-            readonly menu: {
+            readonly categorias: {
               columns: {
                 readonly id: {
                   readonly nativeType: 'text';
@@ -325,7 +345,29 @@ type ContractBase = Omit<
                   readonly codecId: 'pg/text@1';
                   readonly nullable: false;
                 };
-                readonly categoria: {
+                readonly orden: {
+                  readonly nativeType: 'int4';
+                  readonly codecId: 'pg/int4@1';
+                  readonly nullable: false;
+                  readonly default: {
+                    readonly kind: 'literal';
+                    readonly value: DefaultLiteralValue<'pg/int4@1', 0>;
+                  };
+                };
+              };
+              primaryKey: { readonly columns: readonly ['id']; readonly name: 'categorias_pkey' };
+              uniques: readonly [];
+              indexes: readonly [];
+              foreignKeys: readonly [];
+            };
+            readonly menu: {
+              columns: {
+                readonly id: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: false;
+                };
+                readonly nombre: {
                   readonly nativeType: 'text';
                   readonly codecId: 'pg/text@1';
                   readonly nullable: false;
@@ -360,11 +402,36 @@ type ContractBase = Omit<
                     readonly expression: "timezone('utc'::text, now())";
                   };
                 };
+                readonly categoria_id: {
+                  readonly nativeType: 'text';
+                  readonly codecId: 'pg/text@1';
+                  readonly nullable: false;
+                };
               };
               primaryKey: { readonly columns: readonly ['id']; readonly name: 'menu_pkey' };
               uniques: readonly [];
-              indexes: readonly [];
-              foreignKeys: readonly [];
+              indexes: readonly [
+                {
+                  readonly name: 'menu_categoria_id_idx';
+                  readonly columns: readonly ['categoria_id'];
+                  readonly unique: false;
+                },
+              ];
+              foreignKeys: readonly [
+                {
+                  readonly source: {
+                    readonly namespaceId: 'public' & NamespaceId;
+                    readonly tableName: 'menu';
+                    readonly columns: readonly ['categoria_id'];
+                  };
+                  readonly target: {
+                    readonly namespaceId: 'public' & NamespaceId;
+                    readonly tableName: 'categorias';
+                    readonly columns: readonly ['id'];
+                  };
+                  readonly name: 'menu_categoria_id_fkey';
+                },
+              ];
             };
           };
         };
@@ -377,13 +444,17 @@ type ContractBase = Omit<
   readonly target: 'postgres';
   readonly targetFamily: 'sql';
   readonly roots: {
+    readonly categorias: {
+      readonly namespace: 'public' & NamespaceId;
+      readonly model: 'Categorias';
+    };
     readonly menu: { readonly namespace: 'public' & NamespaceId; readonly model: 'Menu' };
   };
   readonly domain: {
     readonly namespaces: {
       readonly public: {
         readonly models: {
-          readonly Menu: {
+          readonly Categorias: {
             readonly fields: {
               readonly id: {
                 readonly nullable: false;
@@ -393,7 +464,38 @@ type ContractBase = Omit<
                 readonly nullable: false;
                 readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
               };
-              readonly categoria: {
+              readonly orden: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/int4@1' };
+              };
+            };
+            readonly relations: {
+              readonly menus: {
+                readonly to: { readonly namespace: 'public' & NamespaceId; readonly model: 'Menu' };
+                readonly cardinality: '1:N';
+                readonly on: {
+                  readonly localFields: readonly ['id'];
+                  readonly targetFields: readonly ['categoriaId'];
+                };
+              };
+            };
+            readonly storage: {
+              readonly table: 'categorias';
+              readonly namespaceId: 'public';
+              readonly fields: {
+                readonly id: { readonly column: 'id' };
+                readonly nombre: { readonly column: 'nombre' };
+                readonly orden: { readonly column: 'orden' };
+              };
+            };
+          };
+          readonly Menu: {
+            readonly fields: {
+              readonly id: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
+              readonly nombre: {
                 readonly nullable: false;
                 readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
               };
@@ -424,20 +526,36 @@ type ContractBase = Omit<
                   readonly codecId: 'pg/timestamptz-temporal@1';
                 };
               };
+              readonly categoriaId: {
+                readonly nullable: false;
+                readonly type: { readonly kind: 'scalar'; readonly codecId: 'pg/text@1' };
+              };
             };
-            readonly relations: Record<string, never>;
+            readonly relations: {
+              readonly categoria: {
+                readonly to: {
+                  readonly namespace: 'public' & NamespaceId;
+                  readonly model: 'Categorias';
+                };
+                readonly cardinality: 'N:1';
+                readonly on: {
+                  readonly localFields: readonly ['categoriaId'];
+                  readonly targetFields: readonly ['id'];
+                };
+              };
+            };
             readonly storage: {
               readonly table: 'menu';
               readonly namespaceId: 'public';
               readonly fields: {
                 readonly id: { readonly column: 'id' };
                 readonly nombre: { readonly column: 'nombre' };
-                readonly categoria: { readonly column: 'categoria' };
                 readonly precio: { readonly column: 'precio' };
                 readonly descripcion: { readonly column: 'descripcion' };
                 readonly foto: { readonly column: 'foto' };
                 readonly alt: { readonly column: 'alt' };
                 readonly createdAt: { readonly column: 'created_at' };
+                readonly categoriaId: { readonly column: 'categoria_id' };
               };
             };
           };
